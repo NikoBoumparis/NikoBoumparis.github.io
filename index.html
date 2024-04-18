@@ -1,74 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nikolaos Boumparis - Digital Health & Psychology</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        color: #333;
-        text-align: center;
-        padding-top: 50px;
-    }
-    h1 {
-        color: #333;
-    }
-    #timer {
-        font-size: 2em;
-        margin-top: 20px;
-    }
-</style>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        #timer {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>We're Currently Under Maintenance</h1>
-    <p>The website will be live in:</p>
+    <h1>Currently Under Maintenance</h1>
+    <p>The website will be "live" in:</p>
     <div id="timer"></div>
     <script>
-        function countdown(endDate) {
-            let days, hours, minutes, seconds;
+        function countdown() {
+            let timeRemaining = 9;
+            const timerElement = document.getElementById("timer");
             
-            endDate = new Date(endDate).getTime();
+            const timerInterval = setInterval(function() {
+                timerElement.innerHTML = timeRemaining + " seconds";
 
-            if (isNaN(endDate)) {
-                return;
-            }
-
-            setInterval(calculate, 1000);
-
-            function calculate() {
-                let startDate = new Date();
-                startDate = startDate.getTime();
-
-                let timeRemaining = parseInt((endDate - startDate) / 1000);
-
-                if (timeRemaining >= 0) {
-                    days = parseInt(timeRemaining / 86400);
-                    timeRemaining = (timeRemaining % 86400);
-                    
-                    hours = parseInt(timeRemaining / 3600);
-                    timeRemaining = (timeRemaining % 3600);
-
-                    minutes = parseInt(timeRemaining / 60);
-                    seconds = parseInt(timeRemaining % 60);
-
-                    document.getElementById("timer").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+                if (timeRemaining > 0) {
+                    timeRemaining--;
                 } else {
-                    document.getElementById("timer").innerHTML = "The countdown is over!";
+                    timeRemaining = 9; // Reset timer back to 9 seconds
                 }
-            }
+            }, 1000);
         }
 
-        (function () {
-            // Set the date we're counting down to
-            // Adjust the "daysToAdd" variable to change the countdown
-            const daysToAdd = 666;
-            let currentDate = new Date();
-            currentDate.setDate(currentDate.getDate() + daysToAdd);
-
-            countdown(currentDate);
-        })();
+        // Start the countdown when the page loads
+        window.onload = function() {
+            countdown();
+        };
     </script>
 </body>
 </html>
