@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,27 +33,7 @@
             const scale = 20;
             const rows = canvas.height / scale;
             const columns = canvas.width / scale;
-            var snake;
-
-            (function setup() {
-                snake = new Snake();
-                fruit = new Fruit();
-                fruit.pickLocation();
-
-                window.setInterval(() => {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    fruit.draw();
-                    snake.update();
-                    snake.draw();
-
-                    if (snake.eat(fruit)) {
-                        fruit.pickLocation();
-                    }
-
-                    snake.checkCollision();
-                    document.querySelector('h1').innerText = 'Oops! We\'re under maintenance. Play Snake while you wait! Score: ' + snake.total;
-                }, 250);
-            }());
+            let snake;
 
             function Snake() {
                 this.x = 0;
@@ -65,11 +45,9 @@
 
                 this.draw = function() {
                     ctx.fillStyle = "#FFFFFF";
-
                     for (let i=0; i<this.tail.length; i++) {
                         ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale);
                     }
-
                     ctx.fillRect(this.x, this.y, scale, scale);
                 };
 
@@ -77,25 +55,22 @@
                     for (let i=0; i<this.tail.length - 1; i++) {
                         this.tail[i] = this.tail[i+1];
                     }
-
-                    this.tail[this.total - 1] = { x: this.x, y: this.y };
+                    if (this.total >= 1) {
+                        this.tail[this.total - 1] = { x: this.x, y: this.y };
+                    }
 
                     this.x += this.xSpeed;
                     this.y += this.ySpeed;
 
-                    if (this.x > canvas.width) {
+                    if (this.x >= canvas.width) {
                         this.x = 0;
-                    }
-
-                    if (this.y > canvas.height) {
-                        this.y = 0;
-                    }
-
-                    if (this.x < 0) {
+                    } else if (this.x < 0) {
                         this.x = canvas.width - scale;
                     }
 
-                    if (this.y < 0) {
+                    if (this.y >= canvas.height) {
+                        this.y = 0;
+                    } else if (this.y < 0) {
                         this.y = canvas.height - scale;
                     }
                 };
@@ -105,45 +80,35 @@
                         case 'Up':
                             if (this.ySpeed === 0) {
                                 this.xSpeed = 0;
-                                this.ySpeed = -scale * 1;
+                                this.ySpeed = -scale;
                             }
                             break;
                         case 'Down':
                             if (this.ySpeed === 0) {
                                 this.xSpeed = 0;
-                                this.ySpeed = scale * 1;
+                                this.ySpeed = scale;
                             }
                             break;
                         case 'Left':
                             if (this.xSpeed === 0) {
-                                this.xSpeed = -scale * 1;
+                                this.xSpeed = -scale;
                                 this.ySpeed = 0;
                             }
                             break;
                         case 'Right':
                             if (this.xSpeed === 0) {
-                                this.xSpeed = scale * 1;
+                                this.xSpeed = scale;
                                 this.ySpeed = 0;
                             }
                             break;
                     }
                 };
 
-                this.checkCollision = function() {
-                    for (var i=0; i<this.tail.length; i++) {
-                        if (this.x === this.tail[i].x && this.y === this.tail[i].y) {
-                            this.total = 0;
-                            this.tail = [];
-                        }
-                    }
-                };
-
-                this.eat = function(fruit) {
-                    if (this.x === fruit.x && this.y === fruit.y) {
+                this.eat = function(fruitPosition) {
+                    if (this.x === fruitPosition.x && this.y === fruitPosition.y) {
                         this.total++;
                         return true;
                     }
-
                     return false;
                 };
             }
@@ -153,4 +118,37 @@
                 this.y;
 
                 this.pickLocation = function() {
-                    this.x = (Math.floor(Math.random() * columns - 1) +
+                    this.x = (Math.floor(Math.random() * columns)) * scale;
+                    this.y = (Math.floor(Math.random() * rows)) * scale;
+                };
+
+                this.draw = function() {
+                    ctx.fillStyle = "#e74c3c";
+                    ctx.fillRect(this.x, this.y, scale, scale);
+                };
+            }
+
+            let fruit = new Fruit();
+            let snake = new Snake();
+
+            (function setup() {
+                fruit.pickLocation();
+                window.setInterval(() => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    fruit.draw();
+                    snake.update();
+                    snake.draw();
+                    if (snake.eat(fruit)) {
+                        fruit.pickLocation();
+                    }
+                }, 100);
+            })();
+
+            window.addEventListener('keydown', ((evt) => {
+                const direction = evt.key.replace('Arrow', '');
+                snake.changeDirection(direction);
+            }));
+        </script>
+    </div>
+</body>
+</html>
