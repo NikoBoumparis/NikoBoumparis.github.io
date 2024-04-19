@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikolaos Boumparis - Digital Health & Psychology</title>
     <style>
-        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #f4f4f4; }
-        canvas { background-color: #000; }
+        body { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #f4f4f4; }
+        canvas { background-color: #000; margin-top: 20px; }
+        #score { font-size: 18px; }
+        #instructions { font-size: 14px; margin-top: 10px; }
+        button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
     </style>
 </head>
 <body>
+    <h1 id="score">Score: 0</h1>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <button onclick="startGame()">Start Game</button>
+    <p id="instructions">Use the arrow keys to navigate the snake towards the food. Each food eaten increases your score by one.</p>
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         const blockSize = 20;
         const canvasSize = 400;
-        let snake = [{x: 160, y: 200}, {x: 140, y: 200}];
-        let food = {x: 300, y: 200};
-        let dx = blockSize; // moving right
-        let dy = 0;
-        let changingDirection = false;
+        let snake;
+        let food;
+        let dx;
+        let dy;
+        let score;
+        let changingDirection;
+        let gameInterval;
 
         function randomFood(min, max) {
             return Math.round((Math.random() * (max-min) + min) / blockSize) * blockSize;
@@ -31,13 +39,25 @@
                 x: randomFood(0, canvasSize - blockSize),
                 y: randomFood(0, canvasSize - blockSize)
             };
-
-            // Check if the new food location is where the snake currently is
-            snake.forEach(function isFoodOnSnake(part) {
-                const foodIsOnSnake = part.x == food.x && part.y == food.y;
-                if (foodIsOnSnake)
-                    createFood(); // Recursively generate new food position
+            snake.forEach(part => {
+                if (part.x == food.x && part.y == food.y) createFood();
             });
+        }
+
+        function resetGame() {
+            snake = [{x: 160, y: 200}, {x: 140, y: 200}];
+            dx = blockSize;
+            dy = 0;
+            score = 0;
+            changingDirection = false;
+            document.getElementById('score').innerText = 'Score: ' + score;
+            createFood();
+            if (gameInterval) clearInterval(gameInterval);
+            gameInterval = setInterval(gameLoop, 100);
+        }
+
+        function startGame() {
+            resetGame();
         }
 
         function drawFood() {
@@ -52,73 +72,58 @@
             ctx.strokeRect(snakePart.x, snakePart.y, blockSize, blockSize);
         }
 
+        function drawSnake() {
+            snake.forEach(drawSnakePart);
+        }
+
         function moveSnake() {
             const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-            snake.unshift(head); // Add new head to the beginning
-            if (snake[0].x === food.x && snake[0].y === food.y) {
-                createFood(); // Generate new food location
+            snake.unshift(head);
+            if (snake[0].x == food.x && snake[0].y == food.y) {
+                score += 1;
+                document.getElementById('score').innerText = 'Score: ' + score;
+                createFood();
             } else {
-                snake.pop(); // Remove the tail
+                snake.pop();
             }
-        }
-
-        function didGameEnd() {
-            for (let i = 4; i < snake.length; i++) {
-                if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
-            }
-            const hitLeftWall = snake[0].x < 0;
-            const hitRightWall = snake[0].x > canvasSize - blockSize;
-            const hitTopWall = snake[0].y < 0;
-            const hitBottomWall = snake[0].y > canvasSize - blockSize;
-            return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
-        }
-
-        function resetGame() {
-            snake = [{x: 160, y: 200}, {x: 140, y: 200}];
-            dx = blockSize; // moving right
-            dy = 0;
-            createFood(); // Create initial food
         }
 
         function changeDirection(event) {
+            const keyPressed = event.keyCode;
             const LEFT_KEY = 37;
             const RIGHT_KEY = 39;
             const UP_KEY = 38;
             const DOWN_KEY = 40;
             if (changingDirection) return;
             changingDirection = true;
-            const keyPressed = event.keyCode;
-            const goingUp = dy === -blockSize;
-            const goingDown = dy === blockSize;
-            const goingRight = dx === blockSize;
-            const goingLeft = dx === -blockSize;
-            if (keyPressed === LEFT_KEY && !goingRight) { dx = -blockSize; dy = 0; }
-            if (keyPressed === UP_KEY && !goingDown) { dx = 0; dy = -blockSize; }
-            if (keyPressed === RIGHT_KEY && !goingLeft) { dx = blockSize; dy = 0; }
-            if (keyPressed === DOWN_KEY && !goingUp) { dx = 0; dy = blockSize; }
+            if (keyPressed == LEFT_KEY && dx === 0) { dx = -blockSize; dy = 0; }
+            else if (keyPressed == UP_KEY && dy === 0) { dx = 0; dy = -blockSize; }
+            else if (keyPressed == RIGHT_KEY && dx === 0) { dx = blockSize; dy = 0; }
+            else if (keyPressed == DOWN_KEY && dy === 0) { dx = 0; dy = blockSize; }
+        }
+
+        function checkCollision() {
+            const hitLeftWall = snake[0].x < 0;
+            const hitRightWall = snake[0].x >= canvasSize;
+            const hitTopWall = snake[0].y < 0;
+            const hitBottomWall = snake[0].y >= canvasSize;
+            const hitSelf = snake.slice(1).some(part => part.x == snake[0].x && part.y == snake[0].y);
+            return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall || hitSelf;
         }
 
         function gameLoop() {
-            if (didGameEnd()) {
-                setTimeout(resetGame, 2000); // Wait 2 seconds to restart the game
+            if (checkCollision()) {
+                clearInterval(gameInterval);
+                setTimeout(startGame, 2000); // Restart game after 2 seconds
                 return;
             }
             changingDirection = false;
-            setTimeout(function onTick() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                drawFood();
-                moveSnake();
-                drawSnake();
-                gameLoop();
-            }, 100);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawFood();
+            moveSnake();
+            drawSnake();
         }
 
-        function drawSnake() {
-            snake.forEach(drawSnakePart);
-        }
-
-        createFood(); // Create initial food
-        gameLoop(); // Start game
         document.addEventListener("keydown", changeDirection);
     </script>
 </body>
