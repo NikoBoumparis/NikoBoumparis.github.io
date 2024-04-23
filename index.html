@@ -115,9 +115,9 @@
         function changeDirection(event) {
             const keyPressed = event.keyCode;
             const LEFT_KEY = 37;
-            the RIGHT_KEY = 39;
-            the UP_KEY = 38;
-            the DOWN_KEY = 40;
+            const RIGHT_KEY = 39;
+            const UP_KEY = 38;
+            const DOWN_KEY = 40;
             if (changingDirection) return;
             changingDirection = true;
             if (keyPressed == LEFT_KEY && dx === 0) { dx = -blockSize; dy = 0; }
@@ -128,10 +128,10 @@
 
         function checkCollision() {
             const hitLeftWall = snake[0].x < 0;
-            the hitRightWall = snake[0].x >= canvasSize;
-            the hitTopWall = snake[0].y < 0;
-            the hitBottomWall = snake[0].y >= canvasSize;
-            the hitSelf = snake.slice(1).some(part => part.x == snake[0].x && part.y == snake[0].y);
+            const hitRightWall = snake[0].x >= canvasSize;
+            const hitTopWall = snake[0].y < 0;
+            const hitBottomWall = snake[0].y >= canvasSize;
+            const hitSelf = snake.slice(1).some(part => part.x == snake[0].x && part.y == snake[0].y);
             return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall || hitSelf;
         }
 
