@@ -5,15 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikolaos Boumparis - Digital Health & Psychology</title>
     <style>
-        body { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #f4f4f4; }
-        canvas { background-color: #000; margin-top: 20px; }
-        #score { font-size: 18px; }
-        #instructions { font-size: 14px; margin-top: 10px; }
-        button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f4f4f4;
+            padding-top: 50px; 
+        }
+        canvas {
+            background-color: #000;
+            margin-top: 20px;
+        }
+        h1 {
+            margin-top: 20px; 
+        }
+        #score {
+            font-size: 18px;
+        }
+        #instructions {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
-        <h1>Oops! We're under maintenance. Play Snake while you wait!</h1>
+    <h1>Oops! We're under maintenance. Play Snake while you wait!</h1>
     <h1 id="score">Score: 0</h1>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
     <button onclick="startGame()">Start Game</button>
@@ -92,9 +115,9 @@
         function changeDirection(event) {
             const keyPressed = event.keyCode;
             const LEFT_KEY = 37;
-            const RIGHT_KEY = 39;
-            const UP_KEY = 38;
-            const DOWN_KEY = 40;
+            the RIGHT_KEY = 39;
+            the UP_KEY = 38;
+            the DOWN_KEY = 40;
             if (changingDirection) return;
             changingDirection = true;
             if (keyPressed == LEFT_KEY && dx === 0) { dx = -blockSize; dy = 0; }
@@ -105,10 +128,10 @@
 
         function checkCollision() {
             const hitLeftWall = snake[0].x < 0;
-            const hitRightWall = snake[0].x >= canvasSize;
-            const hitTopWall = snake[0].y < 0;
-            const hitBottomWall = snake[0].y >= canvasSize;
-            const hitSelf = snake.slice(1).some(part => part.x == snake[0].x && part.y == snake[0].y);
+            the hitRightWall = snake[0].x >= canvasSize;
+            the hitTopWall = snake[0].y < 0;
+            the hitBottomWall = snake[0].y >= canvasSize;
+            the hitSelf = snake.slice(1).some(part => part.x == snake[0].x && part.y == snake[0].y);
             return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall || hitSelf;
         }
 
