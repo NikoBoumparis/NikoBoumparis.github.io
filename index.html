@@ -3,154 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikolaos Boumparis - Digital Health & Psychology</title>
+    <title>Dr. Nikolaos Boumparis - Clinical Psychology</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: #f4f4f4;
-            padding-top: 50px; 
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        canvas {
-            background-color: #000;
-            margin-top: 20px;
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
         }
-        h1 {
-            margin-top: 20px; 
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #1abc9c 3px solid;
         }
-        #score {
-            font-size: 18px;
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
         }
-        #instructions {
-            font-size: 14px;
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
             margin-top: 10px;
         }
-        button {
+        header .highlight, header .current a {
+            color: #1abc9c;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        #showcase {
+            min-height: 400px;
+            background: url('/api/placeholder/1200/400') no-repeat center;
+            background-size: cover;
+            text-align: center;
+            color: #ffffff;
+        }
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        #showcase p {
+            font-size: 20px;
+        }
+        #main {
+            padding: 30px 0;
+            background: #ffffff;
+        }
+        #main h2 {
+            color: #35424a;
+        }
+        footer {
+            padding: 20px;
             margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
+            color: #ffffff;
+            background-color: #1abc9c;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Oops! We're under maintenance. Play Snake while you wait!</h1>
-    <h1 id="score">Score: 0</h1>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <button onclick="startGame()">Start Game</button>
-    <p id="instructions">Use the arrow keys to navigate the snake towards the food. Each food eaten increases your score by one.</p>
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        const blockSize = 20;
-        const canvasSize = 400;
-        let snake;
-        let food;
-        let dx;
-        let dy;
-        let score;
-        let changingDirection;
-        let gameInterval;
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Dr.</span> Nikolaos Boumparis</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        function randomFood(min, max) {
-            return Math.round((Math.random() * (max-min) + min) / blockSize) * blockSize;
-        }
+    <section id="showcase">
+        <div class="container">
+            <h1>Clinical Psychology Expert</h1>
+            <p>Specializing in Digital Health and Psychology</p>
+        </div>
+    </section>
 
-        function createFood() {
-            food = {
-                x: randomFood(0, canvasSize - blockSize),
-                y: randomFood(0, canvasSize - blockSize)
-            };
-            snake.forEach(part => {
-                if (part.x == food.x && part.y == food.y) createFood();
-            });
-        }
+    <section id="main">
+        <div class="container">
+            <h2>About Me</h2>
+            <img src="/api/placeholder/200/200" alt="Dr. Nikolaos Boumparis" style="float: left; margin-right: 20px; border-radius: 50%;">
+            <p>Dr. Nikolaos Boumparis is a highly qualified clinical psychologist with a PhD in the field. With extensive experience in both research and clinical practice, Dr. Boumparis specializes in digital health interventions and their applications in psychology.</p>
+            <p>His research interests include:</p>
+            <ul>
+                <li>E-health and m-health applications in mental health</li>
+                <li>Cognitive Behavioral Therapy (CBT) in digital formats</li>
+                <li>The effectiveness of online psychological interventions</li>
+            </ul>
+            <p>Dr. Boumparis is committed to advancing the field of psychology through innovative research and practical applications of digital technologies in mental health care.</p>
+        </div>
+    </section>
 
-        function resetGame() {
-            snake = [{x: 160, y: 200}, {x: 140, y: 200}];
-            dx = blockSize;
-            dy = 0;
-            score = 0;
-            changingDirection = false;
-            document.getElementById('score').innerText = 'Score: ' + score;
-            createFood();
-            if (gameInterval) clearInterval(gameInterval);
-            gameInterval = setInterval(gameLoop, 100);
-        }
-
-        function startGame() {
-            resetGame();
-        }
-
-        function drawFood() {
-            ctx.fillStyle = 'red';
-            ctx.fillRect(food.x, food.y, blockSize, blockSize);
-        }
-
-        function drawSnakePart(snakePart) {
-            ctx.fillStyle = 'lightgreen';
-            ctx.strokeStyle = 'darkgreen';
-            ctx.fillRect(snakePart.x, snakePart.y, blockSize, blockSize);
-            ctx.strokeRect(snakePart.x, snakePart.y, blockSize, blockSize);
-        }
-
-        function drawSnake() {
-            snake.forEach(drawSnakePart);
-        }
-
-        function moveSnake() {
-            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-            snake.unshift(head);
-            if (snake[0].x == food.x && snake[0].y == food.y) {
-                score += 1;
-                document.getElementById('score').innerText = 'Score: ' + score;
-                createFood();
-            } else {
-                snake.pop();
-            }
-        }
-
-        function changeDirection(event) {
-            const keyPressed = event.keyCode;
-            const LEFT_KEY = 37;
-            const RIGHT_KEY = 39;
-            const UP_KEY = 38;
-            const DOWN_KEY = 40;
-            if (changingDirection) return;
-            changingDirection = true;
-            if (keyPressed == LEFT_KEY && dx === 0) { dx = -blockSize; dy = 0; }
-            else if (keyPressed == UP_KEY && dy === 0) { dx = 0; dy = -blockSize; }
-            else if (keyPressed == RIGHT_KEY && dx === 0) { dx = blockSize; dy = 0; }
-            else if (keyPressed == DOWN_KEY && dy === 0) { dx = 0; dy = blockSize; }
-        }
-
-        function checkCollision() {
-            const hitLeftWall = snake[0].x < 0;
-            const hitRightWall = snake[0].x >= canvasSize;
-            const hitTopWall = snake[0].y < 0;
-            const hitBottomWall = snake[0].y >= canvasSize;
-            const hitSelf = snake.slice(1).some(part => part.x == snake[0].x && part.y == snake[0].y);
-            return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall || hitSelf;
-        }
-
-        function gameLoop() {
-            if (checkCollision()) {
-                clearInterval(gameInterval);
-                setTimeout(startGame, 2000); // Restart game after 2 seconds
-                return;
-            }
-            changingDirection = false;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawFood();
-            moveSnake();
-            drawSnake();
-        }
-
-        document.addEventListener("keydown", changeDirection);
-    </script>
-<a href="helloworld.html" style="display: none;">Visit Hello World</a>
-
+    <footer>
+        <p>&copy; 2024 Dr. Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
 </body>
 </html>
