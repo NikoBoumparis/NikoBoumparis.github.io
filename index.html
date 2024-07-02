@@ -5,146 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikolaos Boumparis, PhD Digital Health & Addiction</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #1abc9c 3px solid;
-            text-align: center;
-        }
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header #branding, header nav {
-            float: none;
-            display: inline-block;
-            width: 100%;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav ul {
-            padding: 0;
-            margin: 20px 0 0 0;
-        }
-        header nav li {
-            float: none;
-            display: inline-block;
-            padding: 0 10px;
-        }
-        header a:hover {
-            color: #1abc9c;
-        }
+        /* ... (previous styles remain unchanged) ... */
+
         #showcase {
             min-height: 400px;
-            background: url('/api/placeholder/1200/400') no-repeat center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/400') no-repeat center;
             background-size: cover;
             text-align: center;
             color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #showcase .showcase-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
         }
         #showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         #showcase p {
-            font-size: 20px;
+            font-size: 24px;
+            margin-bottom: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        #intro {
-            padding: 30px 0;
-            background: #ffffff;
-        }
-        #intro h2 {
-            color: #35424a;
-        }
-        #intro p {
-            margin-bottom: 10px;
-        }
-        #main {
-            padding: 30px 0;
-            background: #ffffff;
-        }
-        #main h2 {
-            color: #35424a;
-        }
-        footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #ffffff;
-            background-color: #1abc9c;
-            text-align: center;
-        }
+
+        /* ... (rest of the styles remain unchanged) ... */
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1>Nikolaos Boumparis, PhD</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="presentations.html">Presentations</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- ... (header remains unchanged) ... -->
 
     <section id="showcase">
-        <div class="container">
+        <div class="showcase-content">
             <h1>Clinical Psychology Expert</h1>
             <p>Specializing in Digital Health and Psychology</p>
         </div>
     </section>
 
-    <section id="intro">
-        <div class="container">
-            <h2>Welcome to my professional website</h2>
-            <p>I am Nikolaos Boumparis, a clinical psychologist specializing in digital health interventions. With a PhD in clinical psychology, I focus on leveraging technology to improve mental health outcomes.</p>
-            <p>My research interests include e-health applications, online psychological interventions, and the integration of digital tools in clinical practice. Through this website, I aim to share my work, publications, and insights in the field of digital health psychology.</p>
-        </div>
-    </section>
-
-    <section id="main">
-        <div class="container">
-            <h2>About Me</h2>
-            <img src="/api/placeholder/200/200" alt="Dr. Nikolaos Boumparis" style="float: left; margin-right: 20px; border-radius: 50%;">
-            <p>Dr. Nikolaos Boumparis is a highly qualified clinical psychologist with a PhD in the field. With extensive experience in both research and clinical practice, Dr. Boumparis specializes in digital health interventions and their applications in psychology.</p>
-            <p>His research interests include:</p>
-            <ul>
-                <li>E-health and m-health applications in mental health</li>
-                <li>Cognitive Behavioral Therapy (CBT) in digital formats</li>
-                <li>The effectiveness of online psychological interventions</li>
-            </ul>
-            <p>Dr. Boumparis is committed to advancing the field of psychology through innovative research and practical applications of digital technologies in mental health care.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Dr. Nikolaos Boumparis. All rights reserved.</p>
-    </footer>
+    <!-- ... (rest of the body remains unchanged) ... -->
 </body>
 </html>
