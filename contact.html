@@ -3,117 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Nikolaos Boumparis, PhD Digital Health & Addiction research</title>
+    <title>Contact - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
     <style>
+        :root {
+            --primary-color: #1abc9c;
+            --secondary-color: #35424a;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --link-color: #3498db;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--background-color);
         }
+        
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
+        
         header {
-            background: #35424a;
+            background: var(--secondary-color);
             color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #1abc9c 3px solid;
-            text-align: center;
+            padding: 20px 0;
+            border-bottom: var(--primary-color) 3px solid;
         }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+        }
+        
+        header nav li {
+            margin-left: 20px;
+        }
+        
         header a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 16px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
-        header #branding, header nav {
-            float: none;
-            display: inline-block;
-            width: 100%;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav ul {
-            padding: 0;
-            margin: 20px 0 0 0;
-        }
-        header nav li {
-            float: none;
-            display: inline-block;
-            padding: 0 10px;
-        }
+        
         header a:hover {
-            color: #1abc9c;
+            color: var(--primary-color);
         }
+        
         h2 {
-            color: #35424a;
+            color: var(--secondary-color);
+            margin-top: 40px;
         }
+        
         .contact-info, .social-links {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
             margin-top: 20px;
         }
+        
         .contact-info a, .social-links a {
-            color: #3498db;
+            color: var(--link-color);
             text-decoration: none;
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
         }
+        
         .contact-info a:hover, .social-links a:hover {
-            text-decoration: underline;
+            color: var(--primary-color);
         }
+        
         footer {
+            margin-top: 40px;
             padding: 20px;
-            margin-top: 20px;
             color: #ffffff;
-            background-color: #1abc9c;
+            background-color: var(--secondary-color);
             text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            header nav {
+                margin-top: 20px;
+            }
+            
+            header nav ul {
+                flex-direction: column;
+            }
+            
+            header nav li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1>Nikolaos Boumparis, PhD</h1>
-            </div>
+            <h1>Nikolaos Boumparis, PhD</h1>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="presentations.html">Presentations</a></li>
-                    <li><a href="cv.html">CV</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <div class="container">
         <h2>Contact</h2>
         
         <div class="contact-info">
-            <p>Send me a message:</p>
-            <p><a href="mailto:niko@boumparis.com">Email me</a></p>
+            <h3>Get in Touch</h3>
+            <p>I'm always open to discussing research collaborations, speaking opportunities, or answering questions about my work. Feel free to reach out!</p>
+            <p><strong>Email:</strong> <a href="mailto:niko@boumparis.com">niko@boumparis.com</a></p>
         </div>
-
+        
         <div class="social-links">
-            <p>Connect with me on socials:</p>
+            <h3>Connect with Me</h3>
+            <p>Stay updated with my latest research and professional activities:</p>
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://twitter.com/niko_boumparis" target="_blank" rel="noopener noreferrer">Twitter</a>
         </div>
     </div>
-
     <footer>
-        <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
+        <p>&copy; 2024 Dr. Nikolaos Boumparis. All rights reserved.</p>
     </footer>
 </body>
 </html>

@@ -3,96 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Nikolaos Boumparis, PhD Digital Health & Addiction research</title>
+    <title>Publications - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
     <style>
+        :root {
+            --primary-color: #1abc9c;
+            --secondary-color: #35424a;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --link-color: #3498db;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--background-color);
         }
+        
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
+        
         header {
-            background: #35424a;
+            background: var(--secondary-color);
             color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #1abc9c 3px solid;
-            text-align: center;
+            padding: 20px 0;
+            border-bottom: var(--primary-color) 3px solid;
         }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+        }
+        
+        header nav li {
+            margin-left: 20px;
+        }
+        
         header a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 16px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
-        header #branding, header nav {
-            float: none;
-            display: inline-block;
-            width: 100%;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav ul {
-            padding: 0;
-            margin: 20px 0 0 0;
-        }
-        header nav li {
-            float: none;
-            display: inline-block;
-            padding: 0 10px;
-        }
+        
         header a:hover {
-            color: #1abc9c;
+            color: var(--primary-color);
         }
-        h2 {
-            color: #35424a;
+        
+        h1, h2 {
+            color: var(--secondary-color);
         }
+        
         .publication-list {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
             margin-top: 20px;
         }
-        .publication-list h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
+        
+        .publication-list h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
         }
+        
         .publication-list ul {
             list-style-type: none;
             padding-left: 0;
         }
+        
         .publication-list li {
             margin-bottom: 15px;
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 15px;
         }
+        
         footer {
+            margin-top: 40px;
             padding: 20px;
-            margin-top: 20px;
             color: #ffffff;
-            background-color: #1abc9c;
+            background-color: var(--secondary-color);
             text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            header nav {
+                margin-top: 20px;
+            }
+            
+            header nav ul {
+                flex-direction: column;
+            }
+            
+            header nav li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1>Nikolaos Boumparis, PhD</h1>
-            </div>
+            <h1>Nikolaos Boumparis, PhD</h1>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="presentations.html">Presentations</a></li>
-                    <li><a href="cv.html">CV</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
@@ -101,29 +145,31 @@
     </header>
 
     <div class="container">
-    <h1>Publications</h1>
+        <h1>Publications</h1>
+        <p style="text-align: right; font-style: italic;">Last updated on July 2nd, 2024</p>
 
-<h2>2023 <span style="float: right; font-size: 0.75em;">(Last updated on July 2nd, 2024)</span></h2>
-    <ul>
-        <li>Boumparis, N., Baumgartner, C., Malischnig, D., Wenger, A., Achab, S., Khazaal, Y., ... & Schaub, M. P. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial. Journal of Behavioral Addictions, 12(3), 744-757.</li>
-        <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial. BMC Psychiatry 23, 518.</li>
-        <li>Haug, S., Boumparis, N., Wenger, A., Paz Castro, R., & Schaub, M. P. (2023). Mobile App-Based Coaching for Alcohol Prevention among Adolescents: Pre–Post Study on the Acceptance and Effectiveness of the Program "MobileCoach Alcohol". International journal of environmental research and public health, 20(4), 3263.</li>
-        <li>Haug, S., Boumparis, N., Wenger, A., Schaub, M. P., & Kiselev N. (2023). Predictors of Youth Accessibility for a Mobile Phone-Based Life Skills Training Program for Addiction Prevention. International Journal of Environmental Research and Public Health, 20(14), 6379.</li>
-        <li>Schaub, M. P., Boumparis N., (2023). CANreduce 1.0 bis 3.0: Entwicklungen und Erkenntnisse eines webbasierten Selbsthilfeprogramms zur Reduktion des Cannabiskonsums. Suchtmedizin 25(5): 267-273.</li>
-    </ul>
+        <div class="publication-list">
+            <h2>2023</h2>
+            <ul>
+                <li>Boumparis, N., Baumgartner, C., Malischnig, D., Wenger, A., Achab, S., Khazaal, Y., ... & Schaub, M. P. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial. Journal of Behavioral Addictions, 12(3), 744-757.</li>
+                <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial. BMC Psychiatry 23, 518.</li>
+                <li>Haug, S., Boumparis, N., Wenger, A., Paz Castro, R., & Schaub, M. P. (2023). Mobile App-Based Coaching for Alcohol Prevention among Adolescents: Pre–Post Study on the Acceptance and Effectiveness of the Program "MobileCoach Alcohol". International journal of environmental research and public health, 20(4), 3263.</li>
+                <li>Haug, S., Boumparis, N., Wenger, A., Schaub, M. P., & Kiselev N. (2023). Predictors of Youth Accessibility for a Mobile Phone-Based Life Skills Training Program for Addiction Prevention. International Journal of Environmental Research and Public Health, 20(14), 6379.</li>
+                <li>Schaub, M. P., Boumparis N., (2023). CANreduce 1.0 bis 3.0: Entwicklungen und Erkenntnisse eines webbasierten Selbsthilfeprogramms zur Reduktion des Cannabiskonsums. Suchtmedizin 25(5): 267-273.</li>
+            </ul>
 
-    <h2>2022</h2>
-    <ul>
-        <li>Ahlers, J., Baumgartner, C., Augsburger, M., Wenger, A., Malischnig, D., Boumparis, N., ... & Schaub, M. P. (2022). Cannabis Use in Adults Who Screen Positive for Attention Deficit/Hyperactivity Disorder: CANreduce 2.0 Randomized Controlled Trial Subgroup Analysis. Journal of medical internet research, 24(4), e30138.</li>
-        <li>Boumparis, N., Haug, S., Abend, S., Billieux, J., Riper, H., & Schaub, M. P. (2022). Internet-based interventions for behavioral addictions: A systematic review. Journal of Behavioral Addictions.</li>
-        <li>Boumparis, N., & Schaub, M. P. (2022). Recent advances in digital health interventions for substance use disorders. Current Opinion in Psychiatry, 35(4), 246-251.</li>
-        <li>Haug, S., Boumparis, N., Wenger, A., Schaub, M. P., & Paz Castro, R. (2022). Efficacy of a mobile app-based coaching program for addiction prevention among apprentices: a cluster-randomized controlled trial. International Journal of Environmental Research and Public Health, 19(23), 15730.</li>
-        <li>Schulte, M. H., Boumparis, N., Huizink, A. C., & Riper, H. (2022). Technological Interventions for the Treatment of Substance Use Disorders. Comprehensive Clinical Psychology, 264.</li>
-        <li>Schulte, M. H., Boumparis, N., Kleiboer, A., Wind, T. R., Olff, M., Huizink, A. C., & Riper, H. (2022). The effectiveness of a mobile intervention to reduce young adults' alcohol consumption to not exceed low-risk drinking guidelines. Frontiers in digital health, 4, 1016714.</li>
-        <li>van der Boom, B., Boumparis, N., Donker, T., de Beurs, D., Arntz, A., & Riper, H. (2022). Internet-delivered interventions for personality disorders–A scoping review. Internet interventions, 100525.</li>
-    </ul>
+            <h2>2022</h2>
+            <ul>
+                <li>Ahlers, J., Baumgartner, C., Augsburger, M., Wenger, A., Malischnig, D., Boumparis, N., ... & Schaub, M. P. (2022). Cannabis Use in Adults Who Screen Positive for Attention Deficit/Hyperactivity Disorder: CANreduce 2.0 Randomized Controlled Trial Subgroup Analysis. Journal of medical internet research, 24(4), e30138.</li>
+                <li>Boumparis, N., Haug, S., Abend, S., Billieux, J., Riper, H., & Schaub, M. P. (2022). Internet-based interventions for behavioral addictions: A systematic review. Journal of Behavioral Addictions.</li>
+                <li>Boumparis, N., & Schaub, M. P. (2022). Recent advances in digital health interventions for substance use disorders. Current Opinion in Psychiatry, 35(4), 246-251.</li>
+                <li>Haug, S., Boumparis, N., Wenger, A., Schaub, M. P., & Paz Castro, R. (2022). Efficacy of a mobile app-based coaching program for addiction prevention among apprentices: a cluster-randomized controlled trial. International Journal of Environmental Research and Public Health, 19(23), 15730.</li>
+                <li>Schulte, M. H., Boumparis, N., Huizink, A. C., & Riper, H. (2022). Technological Interventions for the Treatment of Substance Use Disorders. Comprehensive Clinical Psychology, 264.</li>
+                <li>Schulte, M. H., Boumparis, N., Kleiboer, A., Wind, T. R., Olff, M., Huizink, A. C., & Riper, H. (2022). The effectiveness of a mobile intervention to reduce young adults' alcohol consumption to not exceed low-risk drinking guidelines. Frontiers in digital health, 4, 1016714.</li>
+                <li>van der Boom, B., Boumparis, N., Donker, T., de Beurs, D., Arntz, A., & Riper, H. (2022). Internet-delivered interventions for personality disorders–A scoping review. Internet interventions, 100525.</li>
+            </ul>
 
-    <h2>2021</h2>
+   <h2>2021</h2>
     <ul>
         <li>Boumparis, N., Schulte, M. H., Kleiboer, A., Huizink, A., & Riper, H. (2021). A mobile intervention to promote low-risk drinking habits in young adults: Protocol for a randomized controlled trial. JMIR Research Protocols, 10(6), e29750.</li>
     </ul>
@@ -156,3 +202,21 @@
     </ul>
 </body>
 </html>
+
+			
+			
+			
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dr. Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+ 

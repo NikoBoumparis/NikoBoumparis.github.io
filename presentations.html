@@ -3,101 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentations - Nikolaos Boumparis, PhD Digital Health & Addiction research</title>
+    <title>Presentations - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
     <style>
+        :root {
+            --primary-color: #1abc9c;
+            --secondary-color: #35424a;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --link-color: #3498db;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--background-color);
         }
+        
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
+        
         header {
-            background: #35424a;
+            background: var(--secondary-color);
             color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #1abc9c 3px solid;
-            text-align: center;
+            padding: 20px 0;
+            border-bottom: var(--primary-color) 3px solid;
         }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+        }
+        
+        header nav li {
+            margin-left: 20px;
+        }
+        
         header a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 16px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
-        header #branding, header nav {
-            float: none;
-            display: inline-block;
-            width: 100%;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav ul {
-            padding: 0;
-            margin: 20px 0 0 0;
-        }
-        header nav li {
-            float: none;
-            display: inline-block;
-            padding: 0 10px;
-        }
+        
         header a:hover {
-            color: #1abc9c;
+            color: var(--primary-color);
         }
-        h2 {
-            color: #35424a;
+        
+        h1, h2 {
+            color: var(--secondary-color);
         }
+        
         .presentation-list {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
             margin-top: 20px;
         }
-        .presentation-list h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
+        
+        .presentation-list h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
         }
+        
         .presentation-list ul {
             list-style-type: none;
             padding-left: 0;
         }
+        
         .presentation-list li {
             margin-bottom: 15px;
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 15px;
         }
+        
         .presentation-list li small {
             display: block;
             color: #7f8c8d;
             margin-top: 5px;
         }
+        
         footer {
+            margin-top: 40px;
             padding: 20px;
-            margin-top: 20px;
             color: #ffffff;
-            background-color: #1abc9c;
+            background-color: var(--secondary-color);
             text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            header nav {
+                margin-top: 20px;
+            }
+            
+            header nav ul {
+                flex-direction: column;
+            }
+            
+            header nav li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1>Nikolaos Boumparis, PhD</h1>
-            </div>
+            <h1>Nikolaos Boumparis, PhD</h1>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="presentations.html">Presentations</a></li>
-                    <li><a href="cv.html">CV</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
@@ -106,37 +151,39 @@
     </header>
 
     <div class="container">
-    <h1>Presentations</h1>
+        <h1>Presentations</h1>
+        <p style="text-align: right; font-style: italic;">Last updated on July 2nd, 2024</p>
 
-<h2>2024 <span style="float: right; font-size: 0.75em;">(Last updated on July 2nd, 2024)</span></h2>
-    <ul>
-        <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents: A systematic review."
-            <small>European Association of Substance Abuse Research. Prag, Czech Republic, May 2024.</small>
-        </li>
-    </ul>
+        <div class="presentation-list">
+            <h2>2024</h2>
+            <ul>
+                <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents: A systematic review."
+                    <small>European Association of Substance Abuse Research. Prag, Czech Republic, May 2024.</small>
+                </li>
+            </ul>
 
-    <h2>2023</h2>
-    <ul>
-        <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum."
-            <small>Arud Zentrum für Suchtmedizin. Zurich, Switzerland, März 2023.</small>
-        </li>
-        <li>"Snow Control – a web-based intervention to assist problematic cocaine users to reduce or cease their use."
-            <small>Let's Talk Overdose Conference. Online, April 2023.</small>
-        </li>
-    </ul>
+            <h2>2023</h2>
+            <ul>
+                <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum."
+                    <small>Arud Zentrum für Suchtmedizin. Zurich, Switzerland, März 2023.</small>
+                </li>
+                <li>"Snow Control – a web-based intervention to assist problematic cocaine users to reduce or cease their use."
+                    <small>Let's Talk Overdose Conference. Online, April 2023.</small>
+                </li>
+            </ul>
 
-    <h2>2022</h2>
-    <ul>
-        <li>"In adults with alcohol use disorders or hazardous drinking, are digital interventions effective?"
-            <small>World Health Organization. Geneva, Switzerland, August 2022.</small>
-        </li>
-        <li>"In adults with drug use disorders or people using drugs, are digital or telemedicine interventions effective?"
-            <small>World Health Organization. Geneva, Switzerland, August 2022.</small>
-        </li>
-        <li>"Win Back Control – Effectiveness of a web-based self-help tool to reduce problem gambling: A randomised controlled trial."
-            <small>Virtual Solutions for Substance Use Care. Online, January 2022.</small>
-        </li>
-    </ul>
+            <h2>2022</h2>
+            <ul>
+                <li>"In adults with alcohol use disorders or hazardous drinking, are digital interventions effective?"
+                    <small>World Health Organization. Geneva, Switzerland, August 2022.</small>
+                </li>
+                <li>"In adults with drug use disorders or people using drugs, are digital or telemedicine interventions effective?"
+                    <small>World Health Organization. Geneva, Switzerland, August 2022.</small>
+                </li>
+                <li>"Win Back Control – Effectiveness of a web-based self-help tool to reduce problem gambling: A randomised controlled trial."
+                    <small>Virtual Solutions for Substance Use Care. Online, January 2022.</small>
+                </li>
+            </ul>
 
     <h2>2021</h2>
     <ul>
@@ -171,5 +218,16 @@
             <small>European Society for Research on Internet Interventions (ESRII). Norway, Bergen, October 2017.</small>
         </li>
     </ul>
+
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dr. Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
+
+
