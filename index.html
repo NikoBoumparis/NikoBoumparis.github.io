@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nikolaos Boumparis, PhD Digital Health & Addiction research</title>
+    <title>Nikolaos Boumparis, PhD Digital Health & Addiction Research</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,61 +33,31 @@
             text-transform: uppercase;
             font-size: 16px;
         }
-        header #branding, header nav {
-            float: none;
-            display: inline-block;
-            width: 100%;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
         header nav ul {
             padding: 0;
             margin: 20px 0 0 0;
+            list-style: none;
         }
         header nav li {
-            float: none;
             display: inline-block;
             padding: 0 10px;
         }
         header a:hover {
             color: #1abc9c;
         }
-        #showcase {
-            min-height: 400px;
-            background: url('/api/placeholder/1200/400') no-repeat center;
-            background-size: cover;
-            text-align: center;
-            color: #ffffff;
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
         }
-        #showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
-               }
-        #showcase h2 {
-            font-size: 40px;
-            color: #000000; 
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
         }
-		        #showcase p {
-            font-size: 20px;
-        }
-        #intro {
-            padding: 30px 0;
-            background: #ffffff;
-        }
-        #intro h2 {
-            color: #35424a;
-        }
-        #intro p {
-            margin-bottom: 10px;
-        }
-        #main {
-            padding: 30px 0;
-            background: #ffffff;
-        }
-        #main h2 {
-            color: #35424a;
+        .profile-details {
+            flex: 1;
         }
         footer {
             padding: 20px;
@@ -101,9 +71,7 @@
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1>Nikolaos Boumparis, PhD</h1>
-            </div>
+            <h1>Nikolaos Boumparis, PhD</h1>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -117,28 +85,27 @@
         </div>
     </header>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>Specializing in Digital Health and Addiction research</h2>
-        </div>
-    </section>
-
-    <section id="intro">
-        <div class="container">
-
-            <p>I am based in Zürich and specialize in Digital health and Addiction research</p>
-        </div>
-    </section>
-
-<section id="main">
     <div class="container">
-        <h2>About Me</h2>
-        <div style="display: flex; align-items: center;">
-            <img src="NikoBoumparis.github.io/photo.jpg" alt="Nikolaos Boumparis" style="width: 150px; height: auto; margin-right: 20px;">
-            <div>
-                <!-- Add list items or text here if needed -->
-
+        <section id="main">
+            <h2>About Me</h2>
+            <div class="profile">
+                <img src="NikoBoumparis.github.io/photo.jpg" alt="Nikolaos Boumparis">
+                <div class="profile-details">
+                    <p>Nikolaos Boumparis holds a Psychology degree from the University of Crete and a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam. His Ph.D. at Vrije Universiteit focused on digital mental health interventions. Since 2021, Nikolaos has been a postdoctoral researcher at the Swiss Research Institute for Public Health and Addiction, conducting randomized controlled trials, systematic reviews, and meta-analyses in addiction research.</p>
+                    <h3>Research Focus:</h3>
+                    <ul>
+                        <li>Digital interventions focused on behavioral change</li>
+                        <li>Addiction</li>
+                        <li>Randomized controlled trials</li>
+                        <li>Systematic reviews and meta-analyses</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
-</section>
+
+    <footer>
+        <p>&copy; 2024 Dr. Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
+</body>
+</html>
