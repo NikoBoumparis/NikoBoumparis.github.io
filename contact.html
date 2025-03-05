@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
+    <!-- Open Graph tags for better social media sharing -->
+    <meta property="og:title" content="Contact - Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
+    <meta property="og:description" content="Get in touch with Dr. Nikolaos Boumparis, specialist in digital health interventions and addiction research.">
+    <meta property="og:image" content="photo.jpg">
+    <meta property="og:url" content="">
     <style>
         :root {
             --primary-color: #1abc9c;
@@ -11,6 +16,7 @@
             --text-color: #333;
             --background-color: #f8f9fa;
             --link-color: #3498db;
+            --card-bg-color: #ffffff;
         }
         
         body {
@@ -74,14 +80,27 @@
         h2 {
             color: var(--secondary-color);
             margin-top: 40px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
         }
         
         .contact-info, .social-links {
-            background-color: #ffffff;
+            background-color: var(--card-bg-color);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 30px;
             margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-info:hover, .social-links:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-info h3, .social-links h3 {
+            color: var(--primary-color);
+            margin-top: 0;
         }
         
         .contact-info a, .social-links a {
@@ -90,10 +109,22 @@
             display: inline-block;
             margin-right: 15px;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
         
         .contact-info a:hover, .social-links a:hover {
             color: var(--primary-color);
+        }
+        
+        .social-links a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+            margin-top: 10px;
+        }
+        
+        .social-links a:hover {
+            background-color: #e0e0e0;
         }
         
         footer {
@@ -102,6 +133,21 @@
             color: #ffffff;
             background-color: var(--secondary-color);
             text-align: center;
+        }
+        
+        .social-links-footer {
+            margin-bottom: 15px;
+        }
+        
+        .social-links-footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links-footer a:hover {
+            color: var(--primary-color);
         }
         
         @media (max-width: 768px) {
@@ -133,6 +179,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="cv.html">CV</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -155,6 +202,10 @@
         </div>
     </div>
     <footer>
+        <div class="social-links-footer">
+            <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+            <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
         <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
     </footer>
 </body>

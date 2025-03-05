@@ -1,1 +1,171 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
+    <style>
+        :root {
+            --primary-color: #1abc9c;
+            --secondary-color: #35424a;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --link-color: #3498db;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        header {
+            background: var(--secondary-color);
+            color: #ffffff;
+            padding: 20px 0;
+            border-bottom: var(--primary-color) 3px solid;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+        }
+        
+        header nav li {
+            margin-left: 20px;
+        }
+        
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        header a:hover {
+            color: var(--primary-color);
+        }
+        
+        .cv-content {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: #16a085;
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            color: #ffffff;
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            header nav {
+                margin-top: 20px;
+            }
+            
+            header nav ul {
+                flex-direction: column;
+            }
+            
+            header nav li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nikolaos Boumparis, PhD</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>Curriculum Vitae</h1>
+        
+        <div class="cv-content">
+            <p>For a complete overview of my education, research experience, publications, and professional activities, please download my CV using the button below.</p>
+            
+            <a href="assets/Nikolaos_Boumparis_CV.pdf" class="download-btn" download>Download CV (PDF)</a>
+            
+            <h2>Education</h2>
+            <ul>
+                <li><strong>PhD</strong> - Vrije Universiteit Amsterdam</li>
+                <li><strong>Research Master's</strong> - Clinical and Developmental Psychopathology, Vrije Universiteit Amsterdam</li>
+                <li><strong>Bachelor's</strong> - Psychology, University of Crete</li>
+            </ul>
+            
+            <h2>Current Position</h2>
+            <p>Researcher at the Centre for Child and Adolescent Forensics, University Hospital of Psychiatry Zurich (2024-present)</p>
+            
+            <h2>Previous Positions</h2>
+            <p>Postdoctoral Researcher at the Swiss Research Institute for Public Health and Addiction (2021-2024)</p>
+            
+            <!-- You can add more CV highlights here if desired -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
+</body>
+</html>

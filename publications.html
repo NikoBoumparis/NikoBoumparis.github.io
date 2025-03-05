@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
+    <!-- Open Graph tags for better social media sharing -->
+    <meta property="og:title" content="Publications - Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
+    <meta property="og:description" content="Academic publications by Dr. Nikolaos Boumparis in the fields of digital health interventions and addiction research.">
+    <meta property="og:image" content="photo.jpg">
+    <meta property="og:url" content="">
     <style>
         :root {
             --primary-color: #1abc9c;
@@ -11,6 +16,7 @@
             --text-color: #333;
             --background-color: #f8f9fa;
             --link-color: #3498db;
+            --card-bg-color: #ffffff;
         }
         
         body {
@@ -71,22 +77,47 @@
             color: var(--primary-color);
         }
         
-        h1, h2 {
+        h1 {
             color: var(--secondary-color);
+            margin-top: 40px;
+            display: inline-block;
+        }
+        
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .page-header p {
+            font-style: italic;
+            color: #666;
         }
         
         .publication-list {
-            background-color: #ffffff;
+            background-color: var(--card-bg-color);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 30px;
             margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .publication-list:hover {
+            transform: translateY(-5px);
         }
         
         .publication-list h2 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 25px;
+        }
+        
+        .publication-list h2:first-child {
+            margin-top: 0;
         }
         
         .publication-list ul {
@@ -98,6 +129,13 @@
             margin-bottom: 15px;
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 15px;
+            transition: background-color 0.3s ease;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        .publication-list li:hover {
+            background-color: #f9f9f9;
         }
         
         .publication-list li small {
@@ -106,12 +144,43 @@
             margin-top: 5px;
         }
         
+        .publication-list li a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .publication-list li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .pub-year-count {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-left: 10px;
+        }
+        
         footer {
             margin-top: 40px;
             padding: 20px;
             color: #ffffff;
             background-color: var(--secondary-color);
             text-align: center;
+        }
+        
+        .social-links-footer {
+            margin-bottom: 15px;
+        }
+        
+        .social-links-footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links-footer a:hover {
+            color: var(--primary-color);
         }
         
         @media (max-width: 768px) {
@@ -131,6 +200,15 @@
             header nav li {
                 margin: 10px 0;
             }
+            
+            .page-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .page-header p {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -143,6 +221,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="cv.html">CV</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -150,8 +229,10 @@
     </header>
 
     <div class="container">
-        <h1>Publications</h1>
-        <p style="text-align: right; font-style: italic;">Last updated on July 2nd, 2024</p>
+        <div class="page-header">
+            <h1>Publications</h1>
+            <p>Last updated on July 2nd, 2024</p>
+        </div>
 
         <div class="publication-list">
 		
@@ -210,13 +291,15 @@
     <h2>2016</h2>
     <ul>
         <li>Boumparis, N., Karyotaki, E., Kleiboer, A., Hofmann, S. G., & Cuijpers, P. (2016). The effect of Psychotherapeutic Interventions on Positive and Negative Affect in Depression: A Systematic Review and Meta-analysis. Journal of Affective Disorders.</li>
-    </ul>
-</body>
-</html>
+         </ul>
         </div>
     </div>
 
     <footer>
+        <div class="social-links-footer">
+            <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+            <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
         <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
     </footer>
 </body>
