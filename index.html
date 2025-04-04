@@ -129,10 +129,53 @@
             opacity: 0.9; /* Slightly less prominent */
         }
 
+        /* Added Styles for Research Section (similar to research.html draft) */
+         .research-section {
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 40px; /* Ensure spacing from hero/header */
+            margin-bottom: 30px; /* Spacing below */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+         .research-section:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+         }
+         .research-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+         }
+         .research-section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+         }
+         .research-section p {
+             margin-bottom: 15px;
+         }
+          .research-section a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+         }
+         .research-section a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+         }
+
         .profile {
             display: flex;
             align-items: flex-start; /* Align items to the top */
-            margin-top: 40px;
+            /* Removed margin-top: 40px; Add margin to research section instead */
             background-color: var(--card-bg-color);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -314,11 +357,24 @@
                 font-size: 1rem;
             }
 
+             /* Research Section Responsive */
+            .research-section {
+                 padding: 20px;
+                 margin-top: 30px; /* Adjust top margin */
+            }
+            .research-section h2 {
+                 font-size: 1.3rem;
+            }
+            .research-section h3 {
+                  font-size: 1.2rem;
+             }
+
             .profile {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 padding: 20px; /* Adjust padding */
+                margin-top: 30px; /* Add margin if needed after research section */
             }
 
             .profile img {
@@ -378,7 +434,7 @@
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="research.html">Research</a></li> <li><a href="publications.html">Publications</a></li>
                     <li><a href="presentations.html">Presentations</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -393,6 +449,24 @@
     </section>
 
     <div class="container main-content-area">
+
+        <section class="research-section" id="research-overview">
+             <h2>About My Work</h2>
+             <p>My research combines technology and mental health care, exploring how digital tools can improve treatment approaches in addiction science. I develop and test evidence-based interventions to reduce the burden of addiction and mental health issues, especially among vulnerable populations. By finding what actually works and why, I aim to create practical solutions with real impact.</p>
+
+             <h2>Current Positions</h2>
+             <p>Since 2021, I've been working as a Postdoc at the Swiss Research Institute for Public Health and Addiction (ISGF) in Zurich, where my research concentrates on evaluating digital interventions targeting addictive behaviors.</p>
+             <p>In 2024, I began serving as Co-Head of Research and Quality Assurance at the Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich, Switzerland. This role has expanded my research focus to include youth forensic mental health investigating the effectiveness of therapeutic approaches for young people in the justice system.</p>
+
+             <h2>My Research Focus</h2>
+             <h3>Digital Health Interventions</h3>
+             <p>At the Swiss Research Institute for Public Health and Addiction, I evaluate digital tools that help people change harmful behaviors and improve their wellbeing. I'm particularly interested in what makes these interventions effective and how we can keep users engaged over time. My work spans both substance use and behavioral dependencies, where I investigate what treatments work and why through clinical trials, systematic reviews, and meta-analyses. I'm fascinated by the complexities of polysubstance use and how digital approaches can complement traditional treatment approaches</p>
+             <h3>Youth Forensic Mental Health</h3>
+             <p>Since joining the Centre for Child and Youth Forensics in 2024, a significant portion of my research focuses on young people in forensic mental health settings. This challenging intersection of youth development, mental health, and legal contexts presents unique research questions that drive my work. I'm particularly interested in addressing addictive behaviors among justice-involved youth, which research shows is highly prevalent: approximately 84% of youth in juvenile facilities report having used drugs at some point and around 60% meet the criteria for a substance use disorder in the year prior to entering custody. Despite these high rates, only about 28% of detained adolescents have ever utilized treatment services. These statistics highlight the critical need for targeted interventions that address the complex relationship between substance use, mental health, and criminal justice involvement in this vulnerable population.</p>
+
+            <h2>Let's Work Together</h2>
+            <p>I'm always eager to connect with fellow researchers, clinicians, and innovators who share my interests in digital health, addiction science, and youth forensic mental health. If you have ideas for collaboration or just want to discuss this work, please <a href="contact.html">reach out to me</a>.</p>
+        </section>
         <section id="main">
             <div class="profile">
                 <img src="photo.jpg" alt="Nikolaos Boumparis">
