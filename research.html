@@ -110,7 +110,7 @@
              margin-top: 40px; /* Added top margin for spacing from header */
              margin-bottom: 30px;
              transition: transform 0.3s ease, box-shadow 0.3s ease;
-             overflow: auto; /* Contain floated elements like the image */
+             /* overflow: auto; Removed as float is gone */
          }
          .research-section:hover {
               transform: translateY(-5px);
@@ -153,18 +153,7 @@
              text-decoration: underline;
          }
 
-         /* Styles for floated image (if not using inline) */
-         .research-section img.profile-pic { /* Example class */
-            float: left;
-            border-radius: 50%;
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            margin-right: 30px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 3px solid var(--primary-color);
-         }
+         /* Styles for floated image removed as image is gone */
 
 
         footer {
@@ -224,15 +213,7 @@
               .research-section h3 {
                    font-size: 1.2rem;
                }
-             /* Adjust image on smaller screens */
-             .research-section img.profile-pic, /* Target class or inline style */
-             .research-section img[style*="float: left"] { /* Target inline style */
-                 float: none;
-                 display: block;
-                 margin: 0 auto 20px auto; /* Center image */
-                 width: 150px;
-                 height: 150px;
-             }
+             /* Responsive styles for image removed */
         }
          @media (max-width: 480px) {
               header h1 {
@@ -241,12 +222,7 @@
               header a {
                    font-size: 0.8rem;
               }
-              /* Further adjust image on smallest screens */
-              .research-section img.profile-pic, /* Target class or inline style */
-              .research-section img[style*="float: left"] { /* Target inline style */
-                  width: 120px;
-                  height: 120px;
-              }
+              /* Responsive styles for image removed */
          }
     </style>
 </head>
@@ -270,8 +246,6 @@
 
     <div class="container">
         <section class="research-section" id="research-overview">
-            <img src="photo.jpg" alt="Nikolaos Boumparis" style="float: left; border-radius: 50%; width: 180px; height: 180px; object-fit: cover; margin-right: 30px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 3px solid var(--primary-color);">
-
             <h2>About My Work</h2>
             <p>My research combines technology and mental health care, exploring how digital tools can improve treatment approaches in addiction science. I develop and test evidence-based interventions to reduce the burden of addiction and mental health issues, especially among vulnerable populations. By finding what actually works and why, I aim to create practical solutions with real impact.</p>
             <p>I hold a Psychology degree from the University of Crete, a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam, and a Ph.D. from the same university, where my research focused on digital mental health interventions.</p>
