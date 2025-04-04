@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JE50Y0Y4YY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JE50Y0Y4YY');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
+    <meta property="og:title" content="Resources - Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
+    <meta property="og:description" content="Curated resources related to digital health, addiction science, and research methodology.">
+    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content=""> <style>
+        /* Copied styles from your existing pages for consistency */
+        :root {
+            --primary-color: #1abc9c;
+            --secondary-color: #35424a;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --link-color: #3498db;
+            --card-bg-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: visible;
+            padding: 20px;
+            flex-grow: 1;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: var(--secondary-color);
+            color: #ffffff;
+            padding: 20px 0;
+            border-bottom: var(--primary-color) 3px solid;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        header h1 {
+             margin: 0;
+             font-size: 1.8rem;
+        }
+
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header nav li {
+            margin-left: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        header nav li:first-child {
+             margin-left: 0;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        header a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Page Specific Styles */
+        .main-title {
+            color: var(--secondary-color);
+            margin-top: 40px;
+            margin-bottom: 10px; /* Reduced margin */
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        .introduction {
+            margin-bottom: 30px;
+            font-style: italic; /* Optional: italicize intro */
+            color: #555; /* Slightly lighter text */
+        }
+
+        .resource-section {
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+         .resource-section:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+         }
+
+        .resource-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 20px; /* Increased spacing */
+            font-size: 1.5rem;
+        }
+
+         .resource-section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            /* Optional: Add border */
+            /* border-bottom: 1px solid #eee; */
+            /* padding-bottom: 5px; */
+         }
+
+         .resource-section ul {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+         }
+
+         .resource-section li {
+             margin-bottom: 15px; /* Spacing between list items */
+             padding-left: 1.2em; /* Indentation */
+             position: relative;
+             line-height: 1.7; /* Improve readability */
+         }
+
+         /* Custom bullet */
+         .resource-section li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.2em; /* Align with padding */
+            position: absolute;
+            left: 0;
+         }
+
+          /* Specific styling for nested lists if needed */
+         .resource-section ul ul {
+             padding-left: 20px; /* Indent nested lists */
+             margin-top: 10px;
+         }
+          .resource-section ul ul li {
+              margin-bottom: 10px;
+          }
+          .resource-section ul ul li::before {
+              content: '◦'; /* Different bullet for sub-items */
+              /* color: var(--secondary-color); */
+          }
+
+
+         .resource-section a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+         }
+
+         .resource-section a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+         }
+
+         /* Style for the update note */
+        .update-note {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            color: #ffffff;
+            background-color: var(--secondary-color);
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .social-links-footer {
+            margin-bottom: 15px;
+        }
+
+        .social-links-footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links-footer a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            header h1 {
+                 margin-bottom: 15px;
+            }
+            header nav {
+                 margin-top: 10px;
+                 width: 100%;
+            }
+            header nav ul {
+                 flex-direction: column;
+                 align-items: center;
+            }
+            header nav li {
+                 margin: 8px 0;
+                 margin-left: 0;
+            }
+
+             .main-title {
+                 font-size: 1.8rem;
+                 margin-top: 30px;
+                 text-align: center;
+                 display: block;
+             }
+             .introduction {
+                 text-align: center;
+             }
+             .resource-section {
+                 padding: 20px;
+             }
+             .resource-section h2 {
+                 font-size: 1.3rem;
+             }
+              .resource-section h3 {
+                  font-size: 1.2rem;
+              }
+             .update-note {
+                 text-align: center;
+                 margin-top: 20px;
+             }
+        }
+         @media (max-width: 480px) {
+              header h1 {
+                   font-size: 1.5rem;
+              }
+              header a {
+                   font-size: 0.8rem;
+              }
+              .main-title {
+                   font-size: 1.6rem;
+              }
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nikolaos Boumparis, PhD</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="resources.html">Resources</a></li> <li><a href="publications.html">Publications</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="main-title">Resources & Recommendations</h1>
+
+        <p class="introduction">
+            Welcome to my collection of resources that have shaped how I think about and approach research in digital health, addiction science, and clinical psychopathology in general. Whether you're a colleague, student, or fellow researcher, I hope you'll discover something useful here to support your work. These aren't meant to be definitive or comprehensive. Just books, papers, and tools I've personally found helpful and that have influenced my thinking along the way.
+        </p>
+
+        <section class="resource-section" id="digital-health">
+            <h2>Digital Health & Intervention Science</h2>
+            <ul>
+                <li>Eysenbach, G. (2001). What is e‑health?</li>
+                <li>Eysenbach, G. (2005). The Law of Attrition</li>
+                <li>Mohr, D. C., et al. (2014). The Behavioral Intervention Technology Model: An Integrated Conceptual and Technological Framework for eHealth and mHealth Interventions.</li>
+            </ul>
+        </section>
+
+        <section class="resource-section" id="addiction-clinical">
+            <h2>Addiction Science & Clinical Psychopathology</h2>
+             <ul>
+                <li>Koob, G. F. & Volkow, N. D. (2010). Neurocircuitry of Addiction</li>
+                <li>Marlatt, G. A. & Witkiewitz, K. (2002). Harm reduction approaches to alcohol use: Health promotion, prevention, and treatment.</li>
+                <li>Logan, D. E., & Marlatt, G. A. (2010). Harm Reduction Therapy: A Practice-Friendly Review of Research</li>
+                <li>Caspi, A., et al. (2014). The p factor: one general psychopathology factor in the structure of psychiatric disorders?</li>
+             </ul>
+        </section>
+
+        <section class="resource-section" id="meta-analysis">
+             <h2>Meta-Analysis Resources</h2>
+             <h3>Guides & Textbooks</h3>
+             <ul>
+                 <li>Doing Meta-Analysis in R: A Hands-on Guide - A comprehensive, accessible introduction to conducting meta-analyses using R. <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+                 <li>Meta-Analyses in Mental Health Research: A Practical Guide - Prof. Dr. Pim Cuijpers' free manual on conducting rigorous meta-analyses specifically in mental health contexts. <a href="https://research.vu.nl/ws/portalfiles/portal/359053020/2016_Cuijpers_book_meta-analyses.pdf" target="_blank" rel="noopener noreferrer">[PDF Link]</a></li>
+             </ul>
+
+             <h3>Databases & Tools</h3>
+             <ul>
+                 <li>Metapsy - An innovative open-access platform that democratizes meta-analytic research (I hope we'll get something similar for the addiction field!). <a href="https://metapsy.org" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+                 <li>Open Science Framework (OSF) - For preregistration of studies and data sharing. <a href="https://osf.io/" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+                 <li>PROSPERO - For preregistration of systematic reviews and meta-analyses and data sharing. <a href="https://www.crd.york.ac.uk/prospero/" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+             </ul>
+        </section>
+
+        <section class="resource-section" id="methodology-standards">
+             <h2>Methodology & Reporting Standards</h2>
+              <h3>Clinical Trials & Interventions</h3>
+              <ul>
+                  <li>CONSORT (Consolidated Standards of Reporting Trials) – Essential guidelines for reporting randomized controlled trials, with specific extensions for eHealth interventions. <a href="http://www.consort-statement.org/" target="_blank" rel="noopener noreferrer">[CONSORT Home]</a> <a href="https://www.jmir.org/2011/4/e126/" target="_blank" rel="noopener noreferrer">[eHealth Extension]</a></li>
+                  <li>TIDieR (Template for Intervention Description and Replication) – A comprehensive checklist for better reporting of interventions. <a href="https://www.bmj.com/content/348/bmj.g1687" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+                  <li>Shorter, G. W., et al. (2021). The Outcome Reporting in Brief Intervention Trials: Alcohol (ORBITAL) Core Outcome Set: International Consensus on Outcomes to Measure in Efficacy and Effectiveness Trials of Alcohol Brief Interventions</li>
+              </ul>
+             <h3>Evidence Synthesis</h3>
+             <ul>
+                 <li>PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) – The gold standard for transparent reporting of systematic reviews and meta-analyses. <a href="http://www.prisma-statement.org/" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+                 <li>MARS (Mobile App Rating Scale) – A tool for assessing the quality of mobile health apps. <a href="https://mhealth.jmir.org/2015/1/e27/" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+                 <li>PRISMA‑IPD (Preferred Reporting Items for Systematic Reviews and Meta-Analyses of Individual Participant Data) – Guidelines for transparent reporting of individual participant data meta-analyses. <a href="https://www.prisma-statement.org/ipd" target="_blank" rel="noopener noreferrer">[Link]</a></li>
+            </ul>
+        </section>
+
+        <section class="resource-section" id="organizations">
+            <h2>Professional Organizations & Communities</h2>
+            <ul>
+                <li>International Society for Research on Internet Interventions (ISRII)</li>
+                <li>European Society for Research on Internet Interventions (ESRII)</li>
+                <li>European Association of Substance Abuse Research (EASAR)</li>
+                <li>International Network on Brief Interventions for Alcohol & Other Drugs (INEBRIA)</li>
+                <li>European Monitoring Centre for Drugs and Drug Addiction (EMCDDA)</li>
+                <li>European Federation of Addiction Societies (EUFAS)</li>
+                <li>European Psychiatric Association (EPA)</li>
+                <li>European Health Psychology Society (EHPS)</li>
+                <li>European Society for Prevention Research (EUSPR)</li>
+                <li>Mental Health Europe (MHE)</li>
+                <li>European Alliance Against Depression (EAAD)</li>
+                <li>eHealth Network</li>
+            </ul>
+        </section>
+
+         <p class="update-note">
+            Note: This page is regularly updated based on my available time. Last updated: 04.04.2025
+        </p>
+
+    </div>
+
+    <footer>
+        <div class="social-links-footer">
+            <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+            <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
+</body>
+</html>
