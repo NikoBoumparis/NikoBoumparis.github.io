@@ -14,7 +14,8 @@
     <title>Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
     <meta property="og:title" content="Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
     <meta property="og:description" content="Academic researcher specializing in digital health interventions, addiction, and youth forensic mental health.">
-    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content=""> <style>
+    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content="">
+    <style>
         :root {
             --primary-color: #1abc9c;
             --secondary-color: #35424a;
@@ -129,80 +130,90 @@
             opacity: 0.9; /* Slightly less prominent */
         }
 
-        /* Added Styles for Research Section */
-         .research-section {
-             background-color: var(--card-bg-color);
-             border-radius: 8px;
-             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-             padding: 30px;
-             /* Removed margin-top: 0; Allow default flow or control via container */
-             margin-bottom: 30px; /* Spacing below */
-             transition: transform 0.3s ease, box-shadow 0.3s ease;
-             overflow: auto; /* Added to contain floated elements */
-         }
-         .research-section:hover {
-              transform: translateY(-5px);
-              box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-         }
-         .research-section h2 {
-             color: var(--primary-color);
-             border-bottom: 2px solid var(--primary-color);
-             padding-bottom: 10px;
-             display: inline-block;
-             margin-top: 0;
-             margin-bottom: 15px;
-             font-size: 1.5rem;
-         }
-         .research-section h3 {
-             color: var(--secondary-color);
-             margin-top: 25px;
-             margin-bottom: 10px;
-             font-size: 1.3rem;
-         }
-         .research-section p {
-              margin-bottom: 15px;
-         }
-          .research-section a {
-             color: var(--link-color);
-             text-decoration: none;
-             transition: color 0.3s ease;
-             font-weight: 500;
-         }
-         .research-section a:hover {
-             color: var(--primary-color);
-             text-decoration: underline;
-         }
+        /* Styles for Profile Section - Restored */
+        .profile {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            margin-top: 0; /* Let container handle top spacing */
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
 
-        /* Profile section removed */
+        .profile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
 
-        /* Profile image styles moved inline */
+        .profile img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin-right: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--primary-color);
+            flex-shrink: 0;
+        }
 
-        /* Profile details styles removed as section is gone */
+        .profile-details {
+            flex: 1;
+        }
 
+        .profile-details h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            font-size: 1.5rem;
+        }
 
+        .profile-details p {
+            margin-bottom: 15px;
+        }
+
+        .profile-details h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 10px; /* Added margin */
+            font-size: 1.2rem;
+        }
+
+        .profile-details ul {
+            padding-left: 20px;
+            list-style: disc;
+            margin: 0; /* Reset margin */
+        }
+        .profile-details li {
+             margin-bottom: 8px;
+        }
+
+        /* Highlights Section Styles */
         .highlights {
             display: flex;
             flex-wrap: wrap;
-            /* justify-content: space-between; -- Removed for gap */
-            margin-top: 40px; /* This provides space below the research section */
-            gap: 30px; /* Increased gap */
+            margin-top: 40px; /* Space between profile and highlights */
+            gap: 30px;
         }
 
         .highlight-card {
-            flex: 1 1 300px; /* Allow flex-grow, flex-shrink, set basis */
-            /* min-width: 300px; -- Handled by flex-basis */
+            flex: 1 1 300px;
             background-color: var(--card-bg-color);
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
-            display: flex; /* Use flexbox for card layout */
-            flex-direction: column; /* Stack content vertically */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .highlight-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
 
         .highlight-card h3 {
@@ -211,34 +222,35 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             display: inline-block;
-            font-size: 1.3rem; /* Adjusted size */
+            font-size: 1.3rem;
         }
 
         .highlight-card ul {
             padding-left: 20px;
-            list-style: disc; /* Ensure bullets */
-            flex-grow: 1; /* Allow list to take available space */
-            margin-bottom: 15px; /* Add space before button */
+            list-style: disc;
+            flex-grow: 1;
+            margin-bottom: 15px;
+            margin-top: 15px; /* Added spacing */
         }
 
         .highlight-card li {
-            margin-bottom: 10px; /* Increased spacing */
+            margin-bottom: 10px;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
-            color: white !important; /* Ensure text is white */
+            color: white !important;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
-            margin-top: auto; /* Push button to bottom */
+            margin-top: auto;
             transition: background-color 0.3s ease, transform 0.2s ease;
             border: none;
             cursor: pointer;
-            text-align: center; /* Center text in button */
-            align-self: flex-start; /* Align button to the left */
+            text-align: center;
+            align-self: flex-start;
         }
 
         .btn:hover {
@@ -261,7 +273,6 @@
             box-sizing: border-box;
         }
 
-        /* Renamed class for consistency */
         .social-links-footer {
             margin-bottom: 15px;
         }
@@ -306,41 +317,41 @@
                  font-size: 1rem;
             }
 
-             /* Research Section Responsive */
-             .research-section {
-                  padding: 20px;
-                  margin-top: 30px; /* Adjust top margin */
-             }
-             .research-section h2 {
-                  font-size: 1.3rem;
-             }
-             .research-section h3 {
-                   font-size: 1.2rem;
-              }
-             .research-section img { /* Adjust image on smaller screens */
-                 float: none;
-                 display: block;
-                 margin: 0 auto 20px auto; /* Center image */
+            .profile {
+                 flex-direction: column;
+                 align-items: center;
+                 text-align: center;
+                 padding: 20px;
+                 margin-top: 0; /* Adjust margin if needed */
+            }
+
+            .profile img {
+                 margin-right: 0;
+                 margin-bottom: 20px;
                  width: 150px;
                  height: 150px;
+            }
+
+            .profile-details h2 {
+                 font-size: 1.3rem;
+            }
+             .profile-details h3 {
+                  font-size: 1.1rem;
              }
-
-            /* Profile section removed - responsive styles not needed */
-
 
             .highlights {
                  flex-direction: column;
-                 gap: 20px; /* Reduce gap */
-                 margin-top: 30px; /* Adjust spacing after research section */
+                 gap: 20px;
+                 margin-top: 30px;
             }
             .highlight-card {
-                 padding: 20px; /* Adjust padding */
+                 padding: 20px;
             }
             .highlight-card h3 {
                  font-size: 1.2rem;
             }
             .btn {
-                 align-self: center; /* Center button in card */
+                 align-self: center;
             }
         }
          @media (max-width: 480px) {
@@ -356,15 +367,12 @@
               .hero p {
                    font-size: 0.9rem;
               }
-              .research-section img { /* Further adjust image on smallest screens */
-                  width: 120px;
-                  height: 120px;
+              .profile img {
+                   width: 120px;
+                   height: 120px;
               }
-            /* Profile section removed - responsive styles not needed */
          }
-
     </style>
-
 </head>
 <body>
     <header>
@@ -391,53 +399,43 @@
 
     <div class="container main-content-area">
 
-        <section class="research-section" id="research-overview">
-            <img src="photo.jpg" alt="Nikolaos Boumparis" style="float: left; border-radius: 50%; width: 180px; height: 180px; object-fit: cover; margin-right: 30px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 3px solid var(--primary-color);">
+        <section id="main">
+            <div class="profile">
+                <img src="photo.jpg" alt="Nikolaos Boumparis">
+                <div class="profile-details">
+                    <h2>About Me</h2>
+                    <p>Nikolaos Boumparis holds a Psychology degree from the University of Crete and a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam. His Ph.D. at Vrije Universiteit focused on digital mental health interventions.</p>
+                    <p>Since 2021, Nikolaos has been a postdoctoral researcher at the Swiss Research Institute for Public Health and Addiction, conducting randomized controlled trials, systematic reviews, and meta-analyses in addiction research. In 2024, he joined the Centre for Child and Adolescent Forensics at the University Hospital of Psychiatry Zurich to conduct research in forensic mental health settings.</p>
+                    <h3>Research Focus:</h3>
+                    <ul>
+                        <li>Digital health interventions focused on behavioral change</li>
+                        <li>Addiction</li>
+                        <li>Youth forensic mental health</li>
+                    </ul>
+                </div>
+            </div>
 
-            <h2>About My Work</h2>
-            <p>My research combines technology and mental health care, exploring how digital tools can improve treatment approaches in addiction science. I develop and test evidence-based interventions to reduce the burden of addiction and mental health issues, especially among vulnerable populations. By finding what actually works and why, I aim to create practical solutions with real impact.</p>
-            <p>I hold a Psychology degree from the University of Crete, a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam, and a Ph.D. from the same university, where my research focused on digital mental health interventions.</p>
+            <div class="highlights">
+                 <div class="highlight-card">
+                     <h3>Recent Publications</h3>
+                     <ul>
+                         <li>Kiselev, N., Amsler, S., Boumparis, N., et al. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents.</li>
+                         <li>Boumparis, N., Baumgartner, C., Malischnig, D., et al. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial.</li>
+                         <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial.</li>
+                     </ul>
+                     <a href="publications.html" class="btn">View All Publications</a>
+                 </div>
 
-            <h2>Current Positions</h2>
-            <p>I apply my expertise in two roles:</p>
-            <ul>
-                <li>Since 2021, I've been a Postdoctoral Researcher at the <strong>Swiss Research Institute for Public Health and Addiction (ISGF)</strong> in Zurich. Here, my work centers on evaluating digital interventions targeting addictive behaviors through methods like randomized controlled trials, systematic reviews, and meta-analyses.</li>
-                <li>In 2024, I also became Co-Head of Research and Quality Assurance at the <strong>Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich</strong>. This position expands my focus to include youth forensic mental health, investigating the effectiveness of therapeutic approaches for young people within the justice system.</li>
-            </ul>
-
-            <h2>My Research Focus</h2>
-            <h3>Digital Health Interventions & Addiction</h3>
-            <p>At the ISGF, I evaluate digital tools designed to help individuals modify harmful behaviors and enhance their wellbeing. My interest lies in identifying the factors that contribute to the effectiveness of these interventions and exploring strategies to maintain user engagement over time. My work encompasses both substance use and behavioral dependencies, utilizing clinical trials, systematic reviews, and meta-analyses to determine treatment efficacy.</p>
-
-            <h3>Youth Forensic Mental Health</h3>
-            <p>Since joining the Centre for Child and Youth Forensics in 2024, a significant portion of my research focuses on young people in forensic mental health settings. This challenging intersection of youth development, mental health, and legal contexts presents unique research questions that drive my work. I'm particularly interested in addressing addictive behaviors among justice-involved youth, which research shows is highly prevalent: approximately 84% of youth in juvenile facilities report having used drugs at some point and around 60% meet the criteria for a substance use disorder in the year prior to entering custody. Despite these high rates, only about 28% of detained adolescents have ever utilized treatment services. These statistics highlight the critical need for targeted interventions that address the complex relationship between substance use, mental health, and criminal justice involvement in this vulnerable population.</p>
-
-            <h2>Let's Work Together</h2>
-            <p>I am always keen to connect with fellow researchers, clinicians, and innovators who share interests in digital health, addiction science, and youth forensic mental health. If you have ideas for collaboration or wish to discuss this work, please <a href="contact.html">reach out to me</a>.</p>
-        </section>
-
-        <div class="highlights">
-             <div class="highlight-card">
-                 <h3>Recent Publications</h3>
-                 <ul>
-                     <li>Kiselev, N., Amsler, S., Boumparis, N., et al. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents.</li>
-                     <li>Boumparis, N., Baumgartner, C., Malischnig, D., et al. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial.</li>
-                     <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial.</li>
-                 </ul>
-                 <a href="publications.html" class="btn">View All Publications</a>
-             </div>
-
-             <div class="highlight-card">
-                 <h3>Recent Presentations</h3>
-                 <ul>
-                     <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents." European Association of Substance Abuse Research, Prague, Czech Republic, 2024.</li>
-                     <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum." Arud Zentrum für Suchtmedizin, Zurich, Switzerland, 2023.</li>
-                 </ul>
-                 <a href="presentations.html" class="btn">View All Presentations</a>
-             </div>
-        </div>
-
-    </div> <footer>
+                 <div class="highlight-card">
+                     <h3>Recent Presentations</h3>
+                     <ul>
+                         <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents." European Association of Substance Abuse Research, Prague, Czech Republic, 2024.</li>
+                         <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum." Arud Zentrum für Suchtmedizin, Zurich, Switzerland, 2023.</li>
+                     </ul>
+                     <a href="presentations.html" class="btn">View All Presentations</a>
+                 </div>
+            </div>
+        </section> </div> <footer>
         <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

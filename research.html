@@ -3,18 +3,18 @@
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JE50Y0Y4YY"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
 
-      gtag('config', 'G-JE50Y0Y4YY');
+     gtag('config', 'G-JE50Y0Y4YY');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
     <meta property="og:title" content="Research - Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
-    <meta property="og:description" content="Exploring digital health interventions, addiction science, and youth forensic mental health.">
-    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content=""> <style>
+    <meta property="og:description" content="Detailed exploration of digital health interventions, addiction science, and youth forensic mental health research."> <meta property="og:image" content="photo.jpg"> <meta property="og:url" content="">
+    <style>
         /* Copied styles from your existing pages for consistency */
         :root {
             --primary-color: #1abc9c;
@@ -101,64 +101,70 @@
             color: var(--primary-color);
         }
 
-        /* Page Specific Styles */
-        .main-title {
-            color: var(--secondary-color);
-            margin-top: 40px;
-            margin-bottom: 20px; /* Added margin */
-            display: inline-block;
-            font-size: 2rem;
-            border-bottom: 2px solid var(--primary-color); /* Optional: Add underline like section titles */
-            padding-bottom: 10px; /* Optional: Add padding for underline */
-        }
-
-        .research-section {
-            background-color: var(--card-bg-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-top: 20px;
-            margin-bottom: 30px; /* Added spacing between sections */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        /* Styles for Research Section (now the main content) */
+         .research-section {
+             background-color: var(--card-bg-color);
+             border-radius: 8px;
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+             padding: 30px;
+             margin-top: 40px; /* Added top margin for spacing from header */
+             margin-bottom: 30px;
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+             overflow: auto; /* Contain floated elements like the image */
+         }
          .research-section:hover {
-             transform: translateY(-5px);
-             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+              transform: translateY(-5px);
+              box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+         }
+         .research-section h2 {
+             color: var(--primary-color);
+             border-bottom: 2px solid var(--primary-color);
+             padding-bottom: 10px;
+             display: inline-block;
+             margin-top: 0;
+             margin-bottom: 15px;
+             font-size: 1.5rem;
+         }
+         .research-section h3 {
+             color: var(--secondary-color);
+             margin-top: 25px;
+             margin-bottom: 10px;
+             font-size: 1.3rem;
+         }
+         .research-section p {
+              margin-bottom: 15px;
+         }
+         .research-section ul { /* Basic styling for lists */
+            padding-left: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+         }
+         .research-section li {
+            margin-bottom: 8px;
+         }
+          .research-section a {
+             color: var(--link-color);
+             text-decoration: none;
+             transition: color 0.3s ease;
+             font-weight: 500;
+         }
+         .research-section a:hover {
+             color: var(--primary-color);
+             text-decoration: underline;
          }
 
-
-        .research-section h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            display: inline-block;
-            margin-top: 0; /* Remove top margin for section titles */
+         /* Styles for floated image (if not using inline) */
+         .research-section img.profile-pic { /* Example class */
+            float: left;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin-right: 30px;
             margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .research-section h3 {
-            color: var(--secondary-color);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.3rem; /* Slightly smaller than h2 */
-        }
-
-        .research-section p {
-             margin-bottom: 15px;
-        }
-
-        .research-section a { /* Style links within sections */
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500; /* Make links slightly bolder */
-        }
-
-        .research-section a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--primary-color);
+         }
 
 
         footer {
@@ -189,42 +195,44 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             header .container {
-                flex-direction: column;
-                text-align: center;
+                 flex-direction: column;
+                 text-align: center;
             }
             header h1 {
-                 margin-bottom: 15px;
+                  margin-bottom: 15px;
             }
             header nav {
-                 margin-top: 10px;
-                 width: 100%;
+                  margin-top: 10px;
+                  width: 100%;
             }
             header nav ul {
-                 flex-direction: column;
-                 align-items: center;
+                  flex-direction: column;
+                  align-items: center;
             }
             header nav li {
-                 margin: 8px 0;
-                 margin-left: 0;
+                  margin: 8px 0;
+                  margin-left: 0;
             }
 
-             .main-title {
-                 font-size: 1.8rem;
-                 margin-top: 30px;
-                 text-align: center; /* Center title on mobile */
-                 display: block; /* Ensure it takes full width for centering */
-                 border-bottom: none; /* Optional: remove underline on mobile */
-                 padding-bottom: 0;
-             }
              .research-section {
-                 padding: 20px;
+                  padding: 20px;
+                  margin-top: 30px;
              }
              .research-section h2 {
-                 font-size: 1.3rem;
+                  font-size: 1.3rem;
              }
               .research-section h3 {
-                  font-size: 1.2rem;
-              }
+                   font-size: 1.2rem;
+               }
+             /* Adjust image on smaller screens */
+             .research-section img.profile-pic, /* Target class or inline style */
+             .research-section img[style*="float: left"] { /* Target inline style */
+                 float: none;
+                 display: block;
+                 margin: 0 auto 20px auto; /* Center image */
+                 width: 150px;
+                 height: 150px;
+             }
         }
          @media (max-width: 480px) {
               header h1 {
@@ -233,8 +241,11 @@
               header a {
                    font-size: 0.8rem;
               }
-              .main-title {
-                   font-size: 1.6rem;
+              /* Further adjust image on smallest screens */
+              .research-section img.profile-pic, /* Target class or inline style */
+              .research-section img[style*="float: left"] { /* Target inline style */
+                  width: 120px;
+                  height: 120px;
               }
          }
     </style>
@@ -245,49 +256,45 @@
             <h1>Nikolaos Boumparis, PhD</h1>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="resources.html">Resources</a></li> <li><a href="publications.html">Publications</a></li>
-                    <li><a href="presentations.html">Presentations</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                     <li><a href="/">Home</a></li>
+                     <li><a href="research.html">Research</a></li>
+                     <li><a href="resources.html">Resources</a></li>
+                     <li><a href="publications.html">Publications</a></li>
+                     <li><a href="presentations.html">Presentations</a></li>
+                     <li><a href="cv.html">CV</a></li>
+                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <h1 class="main-title">Research Interests</h1>
+        <section class="research-section" id="research-overview">
+            <img src="photo.jpg" alt="Nikolaos Boumparis" style="float: left; border-radius: 50%; width: 180px; height: 180px; object-fit: cover; margin-right: 30px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 3px solid var(--primary-color);">
 
-        <section class="research-section" id="about">
             <h2>About My Work</h2>
             <p>My research combines technology and mental health care, exploring how digital tools can improve treatment approaches in addiction science. I develop and test evidence-based interventions to reduce the burden of addiction and mental health issues, especially among vulnerable populations. By finding what actually works and why, I aim to create practical solutions with real impact.</p>
-        </section>
+            <p>I hold a Psychology degree from the University of Crete, a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam, and a Ph.D. from the same university, where my research focused on digital mental health interventions.</p>
 
-        <section class="research-section" id="positions">
-             <h2>Current Positions</h2>
-             <p>Since 2021, I've been working as a Postdoc at the Swiss Research Institute for Public Health and Addiction (ISGF) in Zurich, where my research concentrates on evaluating digital interventions targeting addictive behaviors.</p>
-             <p>In 2024, I began serving as Co-Head of Research and Quality Assurance at the Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich. This role has expanded my research focus to include youth forensic mental health investigating the effectiveness of therapeutic approaches for young people in the justice system.</p>
-        </section>
+            <h2>Current Positions</h2>
+            <p>I apply my expertise in two roles:</p>
+            <ul>
+                <li>Since 2021, I've been a Postdoctoral Researcher at the <strong>Swiss Research Institute for Public Health and Addiction (ISGF)</strong> in Zurich. Here, my work centers on evaluating digital interventions targeting addictive behaviors through methods like randomized controlled trials, systematic reviews, and meta-analyses.</li>
+                <li>In 2024, I also became Co-Head of Research and Quality Assurance at the <strong>Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich</strong>. This position expands my focus to include youth forensic mental health, investigating the effectiveness of therapeutic approaches for young people within the justice system.</li>
+            </ul>
 
-        <section class="research-section" id="focus">
-             <h2>My Research Focus</h2>
+            <h2>My Research Focus</h2>
+            <h3>Digital Health Interventions & Addiction</h3>
+            <p>At the ISGF, I evaluate digital tools designed to help individuals modify harmful behaviors and enhance their wellbeing. My interest lies in identifying the factors that contribute to the effectiveness of these interventions and exploring strategies to maintain user engagement over time. My work encompasses both substance use and behavioral dependencies, utilizing clinical trials, systematic reviews, and meta-analyses to determine treatment efficacy.</p>
 
-             <h3>Digital Health Interventions</h3>
-             <p>At the Swiss Research Institute for Public Health and Addiction, I evaluate digital tools that help people change harmful behaviors and improve their wellbeing. I'm particularly interested in what makes these interventions effective and how we can keep users engaged over time. My work spans both substance use and behavioral dependencies, where I investigate what treatments work and why through clinical trials, systematic reviews, and meta-analyses. I'm fascinated by the complexities of polysubstance use and how digital approaches can complement traditional treatment approaches.</p>
+            <h3>Youth Forensic Mental Health</h3>
+            <p>Since joining the Centre for Child and Youth Forensics in 2024, a significant portion of my research focuses on young people in forensic mental health settings. This challenging intersection of youth development, mental health, and legal contexts presents unique research questions that drive my work. I'm particularly interested in addressing addictive behaviors among justice-involved youth, which research shows is highly prevalent: approximately 84% of youth in juvenile facilities report having used drugs at some point and around 60% meet the criteria for a substance use disorder in the year prior to entering custody. Despite these high rates, only about 28% of detained adolescents have ever utilized treatment services. These statistics highlight the critical need for targeted interventions that address the complex relationship between substance use, mental health, and criminal justice involvement in this vulnerable population.</p>
 
-             <h3>Youth Forensic Mental Health</h3>
-             <p>Since joining the Centre for Child and Youth Forensics in 2024, a significant portion of my research focuses on young people in forensic mental health settings. This challenging intersection of youth development, mental health, and legal contexts presents unique research questions that drive my work. I'm particularly interested in addressing addictive behaviors among justice-involved youth, which research shows is highly prevalent: approximately 84% of youth in juvenile facilities report having used drugs at some point and around 60% meet the criteria for a substance use disorder in the year prior to entering custody. Despite these high rates, only about 28% of detained adolescents have ever utilized treatment services. These statistics highlight the critical need for targeted interventions that address the complex relationship between substance use, mental health, and criminal justice involvement in this vulnerable population.</p>
-        </section>
-
-        <section class="research-section" id="collaboration">
             <h2>Let's Work Together</h2>
-            <p>I'm always eager to connect with fellow researchers, clinicians, and innovators who share my interests in digital health, addiction science, and youth forensic mental health. If you have ideas for collaboration or just want to discuss this work, please <a href="contact.html">reach out to me</a>.</p>
+            <p>I am always keen to connect with fellow researchers, clinicians, and innovators who share interests in digital health, addiction science, and youth forensic mental health. If you have ideas for collaboration or wish to discuss this work, please <a href="contact.html">reach out to me</a>.</p>
         </section>
 
-    </div>
-
-    <footer>
+    </div> <footer>
         <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
