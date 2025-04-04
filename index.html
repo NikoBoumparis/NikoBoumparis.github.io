@@ -1,432 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JE50Y0Y4YY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-JE50Y0Y4YY');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
-    <meta property="og:title" content="Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
-    <meta property="og:description" content="Academic researcher specializing in digital health interventions, addiction, and youth forensic mental health.">
-    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content=""> <style>
-        :root {
-            --primary-color: #1abc9c;
-            --secondary-color: #35424a;
-            --text-color: #333;
-            --background-color: #f8f9fa;
-            --card-bg-color: #ffffff;
-            --link-color: #3498db; /* Added link color variable */
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            display: flex; /* Use flexbox for footer */
-            flex-direction: column; /* Stack elements vertically */
-            min-height: 100vh; /* Ensure body takes at least full viewport height */
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto; /* Center container horizontally */
-            overflow: visible; /* Changed from hidden to prevent shadow clipping */
-            padding: 20px;
-            box-sizing: border-box; /* Include padding in width calculation */
-        }
-        /* Apply flex-grow to the main content container to push footer down */
-        .main-content-area {
-             flex-grow: 1;
-        }
-
-
-        header {
-            background: var(--secondary-color);
-            color: #ffffff;
-            padding: 20px 0;
-            border-bottom: var(--primary-color) 3px solid;
-        }
-
-        /* Consistent Header Styling */
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        header nav ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        header nav li {
-            margin-left: 15px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-        header nav li:first-child {
-             margin-left: 0;
-        }
-
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            padding: 5px 0;
-        }
-
-        header a:hover {
-            color: var(--primary-color);
-        }
-
-        .hero {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 40px 20px; /* Increased padding */
-            margin-bottom: 30px;
-            text-align: center;
-            width: 100%; /* Ensure hero spans full width */
-            box-sizing: border-box;
-        }
-
-        .hero h2 {
-            font-size: 2.2rem; /* Adjusted size */
-            margin-top: 0; /* Remove top margin */
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        .hero p {
-            font-size: 1.1rem; /* Adjusted size */
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9; /* Slightly less prominent */
-        }
-
-        /* Added Styles for Research Section (similar to research.html draft) */
-         .research-section {
-            background-color: var(--card-bg-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-top: 40px; /* Ensure spacing from hero/header */
-            margin-bottom: 30px; /* Spacing below */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-         .research-section:hover {
-             transform: translateY(-5px);
-             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-         }
-         .research-section h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            display: inline-block;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-         }
-         .research-section h3 {
-            color: var(--secondary-color);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-         }
-         .research-section p {
-             margin-bottom: 15px;
-         }
-          .research-section a {
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-         }
-         .research-section a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-         }
-
-        .profile {
-            display: flex;
-            align-items: flex-start; /* Align items to the top */
-            /* Removed margin-top: 40px; Add margin to research section instead */
-            background-color: var(--card-bg-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
-            overflow: hidden; /* Ensure content stays within rounded corners */
-        }
-
-        .profile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-        }
-
-        .profile img {
-            border-radius: 50%;
-            width: 180px; /* Slightly smaller */
-            height: 180px;
-            object-fit: cover;
-            margin-right: 30px; /* Reduced margin */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 3px solid var(--primary-color);
-            flex-shrink: 0; /* Prevent image from shrinking */
-        }
-
-        .profile-details {
-            flex: 1;
-        }
-
-        .profile-details h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            display: inline-block;
-            font-size: 1.5rem; /* Adjusted size */
-        }
-
-        .profile-details p {
-            margin-bottom: 15px;
-        }
-
-        .profile-details h3 {
-            color: var(--secondary-color);
-            margin-top: 25px;
-            font-size: 1.2rem; /* Adjusted size */
-        }
-
-        .profile-details ul {
-            padding-left: 20px;
-            list-style: disc; /* Ensure bullets are visible */
-        }
-         .profile-details li {
-             margin-bottom: 8px; /* Spacing for list items */
-         }
-
-        .highlights {
-            display: flex;
-            flex-wrap: wrap;
-            /* justify-content: space-between; -- Removed for gap */
-            margin-top: 40px;
-            gap: 30px; /* Increased gap */
-        }
-
-        .highlight-card {
-            flex: 1 1 300px; /* Allow flex-grow, flex-shrink, set basis */
-            /* min-width: 300px; -- Handled by flex-basis */
-            background-color: var(--card-bg-color);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
-            display: flex; /* Use flexbox for card layout */
-            flex-direction: column; /* Stack content vertically */
-        }
-
-        .highlight-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-        }
-
-        .highlight-card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            display: inline-block;
-            font-size: 1.3rem; /* Adjusted size */
-        }
-
-        .highlight-card ul {
-            padding-left: 20px;
-            list-style: disc; /* Ensure bullets */
-            flex-grow: 1; /* Allow list to take available space */
-            margin-bottom: 15px; /* Add space before button */
-        }
-
-        .highlight-card li {
-            margin-bottom: 10px; /* Increased spacing */
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white !important; /* Ensure text is white */
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: auto; /* Push button to bottom */
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center; /* Center text in button */
-            align-self: flex-start; /* Align button to the left */
-        }
-
-        .btn:hover {
-            background-color: #16a085;
-            transform: translateY(-2px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-         .btn:active {
-             transform: translateY(0);
-             box-shadow: none;
-         }
-
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            color: #ffffff;
-            background-color: var(--secondary-color);
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Renamed class for consistency */
-        .social-links-footer {
-            margin-bottom: 15px;
-        }
-
-        .social-links-footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links-footer a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            header h1 {
-                 margin-bottom: 15px;
-            }
-            header nav {
-                 margin-top: 10px;
-                 width: 100%;
-            }
-            header nav ul {
-                 flex-direction: column;
-                 align-items: center;
-            }
-            header nav li {
-                 margin: 8px 0;
-                 margin-left: 0;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-
-             /* Research Section Responsive */
-            .research-section {
-                 padding: 20px;
-                 margin-top: 30px; /* Adjust top margin */
-            }
-            .research-section h2 {
-                 font-size: 1.3rem;
-            }
-            .research-section h3 {
-                  font-size: 1.2rem;
-             }
-
-            .profile {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 20px; /* Adjust padding */
-                margin-top: 30px; /* Add margin if needed after research section */
-            }
-
-            .profile img {
-                margin-right: 0;
-                margin-bottom: 20px;
-                width: 150px; /* Smaller image */
-                height: 150px;
-            }
-
-            .profile-details h2 {
-                font-size: 1.3rem;
-            }
-             .profile-details h3 {
-                 font-size: 1.1rem;
-             }
-
-            .highlights {
-                flex-direction: column;
-                gap: 20px; /* Reduce gap */
-            }
-            .highlight-card {
-                padding: 20px; /* Adjust padding */
-            }
-            .highlight-card h3 {
-                font-size: 1.2rem;
-            }
-            .btn {
-                align-self: center; /* Center button in card */
-            }
-        }
-         @media (max-width: 480px) {
-              header h1 {
-                   font-size: 1.5rem;
-              }
-              header a {
-                   font-size: 0.8rem;
-              }
-              .hero h2 {
-                   font-size: 1.5rem;
-              }
-              .hero p {
-                   font-size: 0.9rem;
-              }
-              .profile img {
-                   width: 120px;
-                   height: 120px;
-              }
-         }
-
-    </style>
-
-    </head>
 <body>
     <header>
         <div class="container">
@@ -435,7 +6,8 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="research.html">Research</a></li>
-                    <li><a href="resources.html">Resources</a></li> <li><a href="publications.html">Publications</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="publications.html">Publications</a></li>
                     <li><a href="presentations.html">Presentations</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -452,61 +24,48 @@
     <div class="container main-content-area">
 
         <section class="research-section" id="research-overview">
-             <h2>About My Work</h2>
-             <p>My research combines technology and mental health care, exploring how digital tools can improve treatment approaches in addiction science. I develop and test evidence-based interventions to reduce the burden of addiction and mental health issues, especially among vulnerable populations. By finding what actually works and why, I aim to create practical solutions with real impact.</p>
+            <h2>About My Work</h2>
+            <p>My research combines technology and mental health care, exploring how digital tools can improve treatment approaches in addiction science. I develop and test evidence-based interventions to reduce the burden of addiction and mental health issues, especially among vulnerable populations. By finding what actually works and why, I aim to create practical solutions with real impact.</p>
+            <p>I hold a Psychology degree from the University of Crete, a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam, and a Ph.D. from the same university, where my research focused on digital mental health interventions.</p>
 
-             <h2>Current Positions</h2>
-             <p>Since 2021, I've been working as a Postdoc at the Swiss Research Institute for Public Health and Addiction (ISGF) in Zurich, where my research concentrates on evaluating digital interventions targeting addictive behaviors.</p>
-             <p>In 2024, I began serving as Co-Head of Research and Quality Assurance at the Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich, Switzerland. This role has expanded my research focus to include youth forensic mental health investigating the effectiveness of therapeutic approaches for young people in the justice system.</p>
+            <h2>Current Positions</h2>
+            <p>I apply my expertise in two roles:</p>
+            <ul>
+                <li>Since 2021, I've been a Postdoctoral Researcher at the <strong>Swiss Research Institute for Public Health and Addiction (ISGF)</strong> in Zurich. Here, my work centers on evaluating digital interventions targeting addictive behaviors through methods like randomized controlled trials, systematic reviews, and meta-analyses.</li>
+                <li>In 2024, I also became Co-Head of Research and Quality Assurance at the <strong>Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich</strong>. This position expands my focus to include youth forensic mental health, investigating the effectiveness of therapeutic approaches for young people within the justice system.</li>
+            </ul>
 
-             <h2>My Research Focus</h2>
-             <h3>Digital Health Interventions</h3>
-             <p>At the Swiss Research Institute for Public Health and Addiction, I evaluate digital tools that help people change harmful behaviors and improve their wellbeing. I'm particularly interested in what makes these interventions effective and how we can keep users engaged over time. My work spans both substance use and behavioral dependencies, where I investigate what treatments work and why through clinical trials, systematic reviews, and meta-analyses. I'm fascinated by the complexities of polysubstance use and how digital approaches can complement traditional treatment approaches</p>
-             <h3>Youth Forensic Mental Health</h3>
-             <p>Since joining the Centre for Child and Youth Forensics in 2024, a significant portion of my research focuses on young people in forensic mental health settings. This challenging intersection of youth development, mental health, and legal contexts presents unique research questions that drive my work. I'm particularly interested in addressing addictive behaviors among justice-involved youth, which research shows is highly prevalent: approximately 84% of youth in juvenile facilities report having used drugs at some point and around 60% meet the criteria for a substance use disorder in the year prior to entering custody. Despite these high rates, only about 28% of detained adolescents have ever utilized treatment services. These statistics highlight the critical need for targeted interventions that address the complex relationship between substance use, mental health, and criminal justice involvement in this vulnerable population.</p>
+            <h2>My Research Focus</h2>
+            <h3>Digital Health Interventions & Addiction</h3>
+            <p>At the ISGF, I evaluate digital tools designed to help individuals modify harmful behaviors and enhance their wellbeing. My interest lies in identifying the factors that contribute to the effectiveness of these interventions and exploring strategies to maintain user engagement over time. My work encompasses both substance use and behavioral dependencies, utilizing clinical trials, systematic reviews, and meta-analyses to determine treatment efficacy. I am particularly intrigued by the complexities of polysubstance use and the potential for digital solutions to augment traditional treatment methods.</p>
+
+            <h3>Youth Forensic Mental Health</h3>
+            <p>My role at the ZKJF involves dedicated research concerning young people in forensic mental health settings. This challenging field, situated at the intersection of youth development, mental health, and legal systems, raises unique questions that guide my investigations. I focus significantly on addressing addictive behaviors among justice-involved youth. Research indicates high prevalence rates: approximately 84% of youth in juvenile facilities report prior drug use, and about 60% meet criteria for a substance use disorder in the year before custody. Yet, only around 28% of these detained adolescents access treatment services. These figures underscore the urgent need for targeted interventions addressing the interplay between substance use, mental health, and criminal justice involvement in this population.</p>
 
             <h2>Let's Work Together</h2>
-            <p>I'm always eager to connect with fellow researchers, clinicians, and innovators who share my interests in digital health, addiction science, and youth forensic mental health. If you have ideas for collaboration or just want to discuss this work, please <a href="contact.html">reach out to me</a>.</p>
+            <p>I am always keen to connect with fellow researchers, clinicians, and innovators who share interests in digital health, addiction science, and youth forensic mental health. If you have ideas for collaboration or wish to discuss this work, please <a href="contact.html">reach out to me</a>.</p>
         </section>
-        <section id="main">
-            <div class="profile">
-                <img src="photo.jpg" alt="Nikolaos Boumparis">
-                <div class="profile-details">
-                    <h2>About Me</h2>
-                    <p>Nikolaos Boumparis holds a Psychology degree from the University of Crete and a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam. His Ph.D. at Vrije Universiteit focused on digital mental health interventions.</p>
 
-                    <p>Since 2021, Nikolaos has been a postdoctoral researcher at the Swiss Research Institute for Public Health and Addiction, conducting randomized controlled trials, systematic reviews, and meta-analyses in addiction research. In 2024, he joined the Centre for Child and Adolescent Forensics at the University Hospital of Psychiatry Zurich to conduct research in forensic mental health settings.</p>
-
-                    <h3>Research Focus:</h3>
-                    <ul>
-                        <li>Digital health interventions focused on behavioral change</li>
-                        <li>Addiction</li>
-                        <li>Youth forensic mental health</li>
-                    </ul>
-                </div>
+        <div class="highlights" style="margin-top: 40px;"> <div class="highlight-card">
+                <h3>Recent Publications</h3>
+                <ul>
+                    <li>Kiselev, N., Amsler, S., Boumparis, N., et al. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents.</li>
+                    <li>Boumparis, N., Baumgartner, C., Malischnig, D., et al. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial.</li>
+                    <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial.</li>
+                </ul>
+                <a href="publications.html" class="btn">View All Publications</a>
             </div>
 
-            <div class="highlights">
-                <div class="highlight-card">
-                    <h3>Recent Publications</h3>
-                    <ul>
-                        <li>Kiselev, N., Amsler, S., Boumparis, N., et al. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents.</li>
-                        <li>Boumparis, N., Baumgartner, C., Malischnig, D., et al. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial.</li>
-                        <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial.</li>
-                    </ul>
-                    <a href="publications.html" class="btn">View All Publications</a>
-                </div>
-
-                <div class="highlight-card">
-                    <h3>Recent Presentations</h3>
-                    <ul>
-                        <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents." European Association of Substance Abuse Research, Prague, Czech Republic, 2024.</li>
-                        <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum." Arud Zentrum für Suchtmedizin, Zurich, Switzerland, 2023.</li>
-                    </ul>
-                    <a href="presentations.html" class="btn">View All Presentations</a>
-                </div>
+            <div class="highlight-card">
+                <h3>Recent Presentations</h3>
+                <ul>
+                    <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents." European Association of Substance Abuse Research, Prague, Czech Republic, 2024.</li>
+                    <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum." Arud Zentrum für Suchtmedizin, Zurich, Switzerland, 2023.</li>
+                </ul>
+                <a href="presentations.html" class="btn">View All Presentations</a>
             </div>
-        </section>
+        </div>
+
     </div> <footer>
         <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
@@ -515,4 +74,3 @@
         <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
     </footer>
 </body>
-</html>
