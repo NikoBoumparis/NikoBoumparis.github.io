@@ -129,15 +129,16 @@
             opacity: 0.9; /* Slightly less prominent */
         }
 
-        /* Added Styles for Research Section (similar to research.html draft) */
+        /* Added Styles for Research Section */
          .research-section {
              background-color: var(--card-bg-color);
              border-radius: 8px;
              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
              padding: 30px;
-             margin-top: 0; /* Adjusted: Now controlled by container or previous element */
+             /* Removed margin-top: 0; Allow default flow or control via container */
              margin-bottom: 30px; /* Spacing below */
              transition: transform 0.3s ease, box-shadow 0.3s ease;
+             overflow: auto; /* Added to contain floated elements */
          }
          .research-section:hover {
               transform: translateY(-5px);
@@ -172,70 +173,18 @@
              text-decoration: underline;
          }
 
-        .profile {
-            display: flex;
-            align-items: flex-start; /* Align items to the top */
-            margin-top: 40px; /* Reinstated margin-top */
-            background-color: var(--card-bg-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
-            overflow: hidden; /* Ensure content stays within rounded corners */
-        }
+        /* Profile section removed */
 
-        .profile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-        }
+        /* Profile image styles moved inline */
 
-        .profile img {
-            border-radius: 50%;
-            width: 180px; /* Slightly smaller */
-            height: 180px;
-            object-fit: cover;
-            margin-right: 30px; /* Reduced margin */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 3px solid var(--primary-color);
-            flex-shrink: 0; /* Prevent image from shrinking */
-        }
+        /* Profile details styles removed as section is gone */
 
-        .profile-details {
-            flex: 1;
-        }
-
-        .profile-details h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            display: inline-block;
-            font-size: 1.5rem; /* Adjusted size */
-        }
-
-        .profile-details p {
-            margin-bottom: 15px;
-        }
-
-        .profile-details h3 {
-            color: var(--secondary-color);
-            margin-top: 25px;
-            font-size: 1.2rem; /* Adjusted size */
-        }
-
-        .profile-details ul {
-            padding-left: 20px;
-            list-style: disc; /* Ensure bullets are visible */
-        }
-         .profile-details li {
-             margin-bottom: 8px; /* Spacing for list items */
-         }
 
         .highlights {
             display: flex;
             flex-wrap: wrap;
             /* justify-content: space-between; -- Removed for gap */
-            margin-top: 40px;
+            margin-top: 40px; /* This provides space below the research section */
             gap: 30px; /* Increased gap */
         }
 
@@ -368,32 +317,21 @@
              .research-section h3 {
                    font-size: 1.2rem;
               }
-
-            .profile {
-                 flex-direction: column;
-                 align-items: center;
-                 text-align: center;
-                 padding: 20px; /* Adjust padding */
-                 margin-top: 30px; /* Adjust top margin */
-            }
-
-            .profile img {
-                 margin-right: 0;
-                 margin-bottom: 20px;
-                 width: 150px; /* Smaller image */
+             .research-section img { /* Adjust image on smaller screens */
+                 float: none;
+                 display: block;
+                 margin: 0 auto 20px auto; /* Center image */
+                 width: 150px;
                  height: 150px;
-            }
-
-            .profile-details h2 {
-                 font-size: 1.3rem;
-            }
-             .profile-details h3 {
-                  font-size: 1.1rem;
              }
+
+            /* Profile section removed - responsive styles not needed */
+
 
             .highlights {
                  flex-direction: column;
                  gap: 20px; /* Reduce gap */
+                 margin-top: 30px; /* Adjust spacing after research section */
             }
             .highlight-card {
                  padding: 20px; /* Adjust padding */
@@ -418,15 +356,16 @@
               .hero p {
                    font-size: 0.9rem;
               }
-              .profile img {
-                   width: 120px;
-                   height: 120px;
+              .research-section img { /* Further adjust image on smallest screens */
+                  width: 120px;
+                  height: 120px;
               }
+            /* Profile section removed - responsive styles not needed */
          }
 
     </style>
 
-    </head>
+</head>
 <body>
     <header>
         <div class="container">
@@ -453,6 +392,8 @@
     <div class="container main-content-area">
 
         <section class="research-section" id="research-overview">
+            <img src="photo.jpg" alt="Nikolaos Boumparis" style="float: left; border-radius: 50%; width: 180px; height: 180px; object-fit: cover; margin-right: 30px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 3px solid var(--primary-color);">
+
             <h2>About My Work</h2>
             <p>My research combines technology and mental health care, exploring how digital tools can improve treatment approaches in addiction science. I develop and test evidence-based interventions to reduce the burden of addiction and mental health issues, especially among vulnerable populations. By finding what actually works and why, I aim to create practical solutions with real impact.</p>
             <p>I hold a Psychology degree from the University of Crete, a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam, and a Ph.D. from the same university, where my research focused on digital mental health interventions.</p>
@@ -466,54 +407,37 @@
 
             <h2>My Research Focus</h2>
             <h3>Digital Health Interventions & Addiction</h3>
-            <p>At the ISGF, I evaluate digital tools designed to help individuals modify harmful behaviors and enhance their wellbeing. My interest lies in identifying the factors that contribute to the effectiveness of these interventions and exploring strategies to maintain user engagement over time. My work encompasses both substance use and behavioral dependencies, utilizing clinical trials, systematic reviews, and meta-analyses to determine treatment efficacy. I am particularly intrigued by the complexities of polysubstance use and the potential for digital solutions to augment traditional treatment methods.</p>
+            <p>At the ISGF, I evaluate digital tools designed to help individuals modify harmful behaviors and enhance their wellbeing. My interest lies in identifying the factors that contribute to the effectiveness of these interventions and exploring strategies to maintain user engagement over time. My work encompasses both substance use and behavioral dependencies, utilizing clinical trials, systematic reviews, and meta-analyses to determine treatment efficacy.</p>
 
             <h3>Youth Forensic Mental Health</h3>
-            <p>My role at the ZKJF involves dedicated research concerning young people in forensic mental health settings. This challenging field, situated at the intersection of youth development, mental health, and legal systems, raises unique questions that guide my investigations. I focus significantly on addressing addictive behaviors among justice-involved youth. Research indicates high prevalence rates: approximately 84% of youth in juvenile facilities report prior drug use, and about 60% meet criteria for a substance use disorder in the year before custody. Yet, only around 28% of these detained adolescents access treatment services. These figures underscore the urgent need for targeted interventions addressing the interplay between substance use, mental health, and criminal justice involvement in this population.</p>
+            <p>Since joining the Centre for Child and Youth Forensics in 2024, a significant portion of my research focuses on young people in forensic mental health settings. This challenging intersection of youth development, mental health, and legal contexts presents unique research questions that drive my work. I'm particularly interested in addressing addictive behaviors among justice-involved youth, which research shows is highly prevalent: approximately 84% of youth in juvenile facilities report having used drugs at some point and around 60% meet the criteria for a substance use disorder in the year prior to entering custody. Despite these high rates, only about 28% of detained adolescents have ever utilized treatment services. These statistics highlight the critical need for targeted interventions that address the complex relationship between substance use, mental health, and criminal justice involvement in this vulnerable population.</p>
 
             <h2>Let's Work Together</h2>
             <p>I am always keen to connect with fellow researchers, clinicians, and innovators who share interests in digital health, addiction science, and youth forensic mental health. If you have ideas for collaboration or wish to discuss this work, please <a href="contact.html">reach out to me</a>.</p>
         </section>
-        <section id="main">
-            <div class="profile">
-                <img src="photo.jpg" alt="Nikolaos Boumparis">
-                <div class="profile-details">
-                    <h2>About Me</h2>
-                    <p>Nikolaos Boumparis holds a Psychology degree from the University of Crete and a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam. His Ph.D. at Vrije Universiteit focused on digital mental health interventions.</p>
 
-                    <p>Since 2021, Nikolaos has been a postdoctoral researcher at the Swiss Research Institute for Public Health and Addiction, conducting randomized controlled trials, systematic reviews, and meta-analyses in addiction research. In 2024, he joined the Centre for Child and Adolescent Forensics at the University Hospital of Psychiatry Zurich to conduct research in forensic mental health settings.</p>
+        <div class="highlights">
+             <div class="highlight-card">
+                 <h3>Recent Publications</h3>
+                 <ul>
+                     <li>Kiselev, N., Amsler, S., Boumparis, N., et al. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents.</li>
+                     <li>Boumparis, N., Baumgartner, C., Malischnig, D., et al. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial.</li>
+                     <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial.</li>
+                 </ul>
+                 <a href="publications.html" class="btn">View All Publications</a>
+             </div>
 
-                    <h3>Research Focus:</h3>
-                    <ul>
-                        <li>Digital health interventions focused on behavioral change</li>
-                        <li>Addiction</li>
-                        <li>Youth forensic mental health</li>
-                    </ul>
-                </div>
-            </div>
+             <div class="highlight-card">
+                 <h3>Recent Presentations</h3>
+                 <ul>
+                     <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents." European Association of Substance Abuse Research, Prague, Czech Republic, 2024.</li>
+                     <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum." Arud Zentrum für Suchtmedizin, Zurich, Switzerland, 2023.</li>
+                 </ul>
+                 <a href="presentations.html" class="btn">View All Presentations</a>
+             </div>
+        </div>
 
-            <div class="highlights">
-                <div class="highlight-card">
-                    <h3>Recent Publications</h3>
-                    <ul>
-                        <li>Kiselev, N., Amsler, S., Boumparis, N., et al. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents.</li>
-                        <li>Boumparis, N., Baumgartner, C., Malischnig, D., et al. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial.</li>
-                        <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial.</li>
-                    </ul>
-                    <a href="publications.html" class="btn">View All Publications</a>
-                </div>
-
-                <div class="highlight-card">
-                    <h3>Recent Presentations</h3>
-                    <ul>
-                        <li>"Factors influencing adherence to digital health interventions targeting addictive behaviours in adolescents." European Association of Substance Abuse Research, Prague, Czech Republic, 2024.</li>
-                        <li>"Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum." Arud Zentrum für Suchtmedizin, Zurich, Switzerland, 2023.</li>
-                    </ul>
-                    <a href="presentations.html" class="btn">View All Presentations</a>
-                </div>
-            </div>
-        </section>
-        </div> <footer>
+    </div> <footer>
         <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
