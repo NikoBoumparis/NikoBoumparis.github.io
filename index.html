@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
-    <!-- Open Graph tags for better social media sharing -->
     <meta property="og:title" content="Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
     <meta property="og:description" content="Academic researcher specializing in digital health interventions, addiction, and youth forensic mental health.">
-    <meta property="og:image" content="photo.jpg">
-    <meta property="og:url" content="">
-    <style>
+    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content=""> <style>
         :root {
             --primary-color: #1abc9c;
             --secondary-color: #35424a;
             --text-color: #333;
             --background-color: #f8f9fa;
             --card-bg-color: #ffffff;
+            --link-color: #3498db; /* Added link color variable */
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -25,239 +23,346 @@
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
+            display: flex; /* Use flexbox for footer */
+            flex-direction: column; /* Stack elements vertically */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
         }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
+            margin: 0 auto; /* Center container horizontally */
+            overflow: visible; /* Changed from hidden to prevent shadow clipping */
             padding: 20px;
+            box-sizing: border-box; /* Include padding in width calculation */
         }
-        
+        /* Apply flex-grow to the main content container to push footer down */
+        .main-content-area {
+             flex-grow: 1;
+        }
+
+
         header {
             background: var(--secondary-color);
             color: #ffffff;
             padding: 20px 0;
             border-bottom: var(--primary-color) 3px solid;
         }
-        
+
+        /* Consistent Header Styling */
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
-        
+
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
-        
+
         header nav ul {
             padding: 0;
             margin: 0;
             list-style: none;
             display: flex;
+            flex-wrap: wrap;
         }
-        
+
         header nav li {
-            margin-left: 20px;
+            margin-left: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
-        
+        header nav li:first-child {
+             margin-left: 0;
+        }
+
         header a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
+            padding: 5px 0;
         }
-        
+
         header a:hover {
             color: var(--primary-color);
         }
-        
+
         .hero {
             background-color: var(--secondary-color);
             color: white;
-            padding: 30px 0;
+            padding: 40px 20px; /* Increased padding */
             margin-bottom: 30px;
             text-align: center;
+            width: 100%; /* Ensure hero spans full width */
+            box-sizing: border-box;
         }
-        
+
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Adjusted size */
+            margin-top: 0; /* Remove top margin */
             margin-bottom: 15px;
             color: white;
         }
-        
+
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Adjusted size */
             max-width: 800px;
             margin: 0 auto;
+            opacity: 0.9; /* Slightly less prominent */
         }
-        
+
         .profile {
             display: flex;
-            align-items: flex-start;
+            align-items: flex-start; /* Align items to the top */
             margin-top: 40px;
             background-color: var(--card-bg-color);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+            overflow: hidden; /* Ensure content stays within rounded corners */
         }
-        
+
         .profile:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
         }
-        
+
         .profile img {
             border-radius: 50%;
-            width: 200px;
-            height: 200px;
+            width: 180px; /* Slightly smaller */
+            height: 180px;
             object-fit: cover;
-            margin-right: 40px;
+            margin-right: 30px; /* Reduced margin */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: 3px solid var(--primary-color);
+            flex-shrink: 0; /* Prevent image from shrinking */
         }
-        
+
         .profile-details {
             flex: 1;
         }
-        
+
         .profile-details h2 {
             color: var(--primary-color);
             margin-top: 0;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             display: inline-block;
+            font-size: 1.5rem; /* Adjusted size */
         }
-        
+
         .profile-details p {
             margin-bottom: 15px;
         }
-        
+
         .profile-details h3 {
             color: var(--secondary-color);
             margin-top: 25px;
+            font-size: 1.2rem; /* Adjusted size */
         }
-        
+
         .profile-details ul {
             padding-left: 20px;
+            list-style: disc; /* Ensure bullets are visible */
         }
-        
+         .profile-details li {
+             margin-bottom: 8px; /* Spacing for list items */
+         }
+
         .highlights {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            /* justify-content: space-between; -- Removed for gap */
             margin-top: 40px;
-            gap: 20px;
+            gap: 30px; /* Increased gap */
         }
-        
+
         .highlight-card {
-            flex: 1;
-            min-width: 300px;
+            flex: 1 1 300px; /* Allow flex-grow, flex-shrink, set basis */
+            /* min-width: 300px; -- Handled by flex-basis */
             background-color: var(--card-bg-color);
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+            display: flex; /* Use flexbox for card layout */
+            flex-direction: column; /* Stack content vertically */
         }
-        
+
         .highlight-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
         }
-        
+
         .highlight-card h3 {
             color: var(--primary-color);
             margin-top: 0;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             display: inline-block;
+            font-size: 1.3rem; /* Adjusted size */
         }
-        
+
         .highlight-card ul {
             padding-left: 20px;
+            list-style: disc; /* Ensure bullets */
+            flex-grow: 1; /* Allow list to take available space */
+            margin-bottom: 15px; /* Add space before button */
         }
-        
+
         .highlight-card li {
-            margin-bottom: 8px;
+            margin-bottom: 10px; /* Increased spacing */
         }
-        
+
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
-            color: white;
+            color: white !important; /* Ensure text is white */
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
+            margin-top: auto; /* Push button to bottom */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center; /* Center text in button */
+            align-self: flex-start; /* Align button to the left */
         }
-        
+
         .btn:hover {
             background-color: #16a085;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
-        
+         .btn:active {
+             transform: translateY(0);
+             box-shadow: none;
+         }
+
         footer {
             margin-top: 40px;
             padding: 20px;
             color: #ffffff;
             background-color: var(--secondary-color);
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
-        
-        .social-links {
+
+        /* Renamed class for consistency */
+        .social-links-footer {
             margin-bottom: 15px;
         }
-        
-        .social-links a {
+
+        .social-links-footer a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
-        
-        .social-links a:hover {
+
+        .social-links-footer a:hover {
             color: var(--primary-color);
         }
-        
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
                 text-align: center;
             }
-            
+            header h1 {
+                 margin-bottom: 15px;
+            }
             header nav {
-                margin-top: 20px;
+                 margin-top: 10px;
+                 width: 100%;
             }
-            
             header nav ul {
-                flex-direction: column;
+                 flex-direction: column;
+                 align-items: center;
             }
-            
             header nav li {
-                margin: 10px 0;
+                 margin: 8px 0;
+                 margin-left: 0;
             }
-            
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+
             .profile {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                padding: 20px; /* Adjust padding */
             }
-            
+
             .profile img {
                 margin-right: 0;
                 margin-bottom: 20px;
+                width: 150px; /* Smaller image */
+                height: 150px;
             }
-            
+
+            .profile-details h2 {
+                font-size: 1.3rem;
+            }
+             .profile-details h3 {
+                 font-size: 1.1rem;
+             }
+
             .highlights {
                 flex-direction: column;
+                gap: 20px; /* Reduce gap */
+            }
+            .highlight-card {
+                padding: 20px; /* Adjust padding */
+            }
+            .highlight-card h3 {
+                font-size: 1.2rem;
+            }
+            .btn {
+                align-self: center; /* Center button in card */
             }
         }
+         @media (max-width: 480px) {
+              header h1 {
+                  font-size: 1.5rem;
+              }
+              header a {
+                  font-size: 0.8rem;
+              }
+              .hero h2 {
+                  font-size: 1.5rem;
+              }
+              .hero p {
+                  font-size: 0.9rem;
+              }
+              .profile img {
+                  width: 120px;
+                  height: 120px;
+              }
+         }
+
     </style>
-</head>
+
+    </head>
 <body>
     <header>
         <div class="container">
@@ -273,24 +378,22 @@
             </nav>
         </div>
     </header>
-    
+
     <section class="hero">
-        <div class="container">
-            <h2>Digital Health & Addiction Research</h2>
-            <p>Developing innovative digital solutions to address mental health challenges and addiction</p>
-        </div>
+        <h2>Digital Health & Addiction Research</h2>
+        <p>Developing innovative digital solutions to address mental health challenges and addiction</p>
     </section>
-    
-    <div class="container">
+
+    <div class="container main-content-area">
         <section id="main">
             <div class="profile">
                 <img src="photo.jpg" alt="Nikolaos Boumparis">
                 <div class="profile-details">
                     <h2>About Me</h2>
                     <p>Nikolaos Boumparis holds a Psychology degree from the University of Crete and a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam. His Ph.D. at Vrije Universiteit focused on digital mental health interventions.</p>
-                    
+
                     <p>Since 2021, Nikolaos has been a postdoctoral researcher at the Swiss Research Institute for Public Health and Addiction, conducting randomized controlled trials, systematic reviews, and meta-analyses in addiction research. In 2024, he joined the Centre for Child and Adolescent Forensics at the University Hospital of Psychiatry Zurich to conduct research in forensic mental health settings.</p>
-                    
+
                     <h3>Research Focus:</h3>
                     <ul>
                         <li>Digital health interventions focused on behavioral change</li>
@@ -299,7 +402,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="highlights">
                 <div class="highlight-card">
                     <h3>Recent Publications</h3>
@@ -310,7 +413,7 @@
                     </ul>
                     <a href="publications.html" class="btn">View All Publications</a>
                 </div>
-                
+
                 <div class="highlight-card">
                     <h3>Recent Presentations</h3>
                     <ul>
@@ -321,10 +424,8 @@
                 </div>
             </div>
         </section>
-    </div>
-    
-    <footer>
-        <div class="social-links">
+    </div> <footer>
+        <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>

@@ -11,8 +11,9 @@
             --text-color: #333;
             --background-color: #f8f9fa;
             --link-color: #3498db;
+            --card-bg-color: #ffffff; /* Added for consistency */
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -20,109 +21,174 @@
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
+            display: flex; /* Use flexbox for footer */
+            flex-direction: column; /* Stack elements vertically */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
         }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto; /* Center container horizontally */
             overflow: hidden;
             padding: 20px;
+            flex-grow: 1; /* Allow container to grow and push footer down */
         }
-        
+
         header {
             background: var(--secondary-color);
             color: #ffffff;
             padding: 20px 0;
             border-bottom: var(--primary-color) 3px solid;
         }
-        
+
+        /* Consistent Header Styling from contact.html */
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            width: 100%; /* Ensure header container uses full width */
+            max-width: 1200px; /* Match main container max-width */
+            margin: 0 auto; /* Center header content */
+            padding: 0 20px; /* Add padding consistent with main container */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
-        
+
         header h1 {
-            margin: 0;
-            font-size: 2rem;
+             margin: 0;
+             font-size: 1.8rem; /* Slightly smaller for better responsiveness */
         }
-        
+        /* Renamed h1 inside main container to avoid conflict */
+        .main-title {
+            color: var(--secondary-color); /* Style for the "Curriculum Vitae" title */
+            margin-top: 40px;
+            display: inline-block;
+        }
+
+
         header nav ul {
             padding: 0;
             margin: 0;
             list-style: none;
             display: flex;
+            flex-wrap: wrap; /* Allow nav items to wrap */
         }
-        
+
         header nav li {
-            margin-left: 20px;
+            margin-left: 15px; /* Slightly reduced margin */
+            margin-top: 5px; /* Add margin for wrapped items */
+            margin-bottom: 5px;
         }
-        
+        header nav li:first-child {
+             margin-left: 0;
+        }
+
         header a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 0.9rem; /* Slightly smaller font */
             transition: color 0.3s ease;
+            padding: 5px 0; /* Add padding for easier clicking */
         }
-        
+
         header a:hover {
             color: var(--primary-color);
         }
-        
+
         .cv-content {
-            background-color: #ffffff;
+            background-color: var(--card-bg-color); /* Use variable */
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 30px;
             margin-top: 20px;
         }
-        
+
         .download-btn {
             display: inline-block;
             background-color: var(--primary-color);
-            color: white;
+            color: white !important; /* Ensure text is white */
             padding: 12px 24px;
             text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
             margin: 20px 0;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Add pointer cursor */
         }
-        
+
         .download-btn:hover {
             background-color: #16a085;
+            transform: translateY(-2px); /* Add slight lift on hover */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Add subtle shadow */
         }
-        
+         .download-btn:active {
+             transform: translateY(0); /* Reset lift on click */
+             box-shadow: none; /* Remove shadow on click */
+         }
+
+
         footer {
-            margin-top: 40px;
+            margin-top: 40px; /* Ensures space above footer */
             padding: 20px;
             color: #ffffff;
             background-color: var(--secondary-color);
             text-align: center;
+            width: 100%; /* Ensure footer spans full width */
+            box-sizing: border-box; /* Include padding in width */
         }
-        
+         /* Add social links to footer for consistency if desired */
+         .social-links-footer {
+             margin-bottom: 15px;
+         }
+
+         .social-links-footer a {
+             color: white;
+             text-decoration: none;
+             margin: 0 10px;
+             transition: color 0.3s ease;
+         }
+
+         .social-links-footer a:hover {
+             color: var(--primary-color);
+         }
+
+        /* Responsive adjustments from contact.html */
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
                 text-align: center;
             }
-            
+             header h1 {
+                 margin-bottom: 15px; /* Add space below title */
+             }
+
             header nav {
-                margin-top: 20px;
+                 margin-top: 10px; /* Reduce space */
+                 width: 100%; /* Ensure nav takes full width */
             }
-            
+
             header nav ul {
-                flex-direction: column;
+                 flex-direction: column; /* Stack nav items vertically */
+                 align-items: center; /* Center nav items */
             }
-            
+
             header nav li {
-                margin: 10px 0;
+                 margin: 8px 0; /* Adjust vertical margin */
+                 margin-left: 0; /* Remove left margin */
             }
+             .main-title {
+                 font-size: 1.8rem; /* Adjust main title size */
+             }
+             .cv-content {
+                 padding: 20px; /* Reduce padding on smaller screens */
+             }
         }
     </style>
-</head>
+
+    </head>
 <body>
     <header>
         <div class="container">
@@ -138,20 +204,23 @@
             </nav>
         </div>
     </header>
-    
+
     <div class="container">
-        <h1>Curriculum Vitae</h1>
-        
+        <h1 class="main-title">Curriculum Vitae</h1>
+
         <div class="cv-content">
             <p>For a complete overview of my education, research experience, publications, and professional activities, please download my CV using the button below.</p>
-            
+
             <a href="assets/Boumparis_CV_February2025.pdf" class="download-btn" download>Download CV (PDF)</a>
-            
 
         </div>
     </div>
-    
+
     <footer>
+        <div class="social-links-footer">
+            <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+            <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
         <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
     </footer>
 </body>
