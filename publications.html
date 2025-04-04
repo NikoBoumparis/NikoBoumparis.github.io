@@ -76,9 +76,289 @@
             margin-top: 5px;
             margin-bottom: 5px;
         }
-         header nav li:first-child {
+        header nav li:first-child {
              margin-left: 0;
-         }
+        }
 
         header a {
-            color: #fff
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        header a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Style for the main H1 title on the page */
+        .main-title {
+            color: var(--secondary-color);
+            margin-top: 40px;
+            display: inline-block;
+            font-size: 2rem; /* Match header h1 size */
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline; /* Align baseline for better text alignment */
+            flex-wrap: wrap;
+            gap: 10px; /* Add gap for spacing */
+            margin-bottom: 10px; /* Space below header */
+        }
+
+        .page-header p {
+            font-style: italic;
+            color: #666;
+            margin: 0; /* Remove default margin */
+        }
+
+        .publication-list {
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .publication-list:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .publication-list h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 30px; /* Increased top margin */
+            margin-bottom: 15px; /* Added bottom margin */
+            font-size: 1.5rem; /* Adjusted size */
+        }
+
+        .publication-list h2:first-of-type { /* Use first-of-type for first h2 */
+            margin-top: 0;
+        }
+
+        .publication-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .publication-list li {
+            margin-bottom: 20px; /* Increased spacing */
+            border-bottom: 1px solid #eee; /* Lighter border */
+            padding-bottom: 20px; /* Increased padding */
+            padding-left: 10px; /* Add left padding for indentation */
+            padding-right: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            line-height: 1.7; /* Improve readability */
+        }
+        /* Remove border from last list item in each UL */
+        .publication-list ul li:last-child {
+             border-bottom: none;
+             margin-bottom: 0;
+             padding-bottom: 10px; /* Adjust padding for last item */
+        }
+
+
+        .publication-list li:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Removed small tag styling as it wasn't used */
+
+        .publication-list li a { /* Style links within list items */
+            color: var(--link-color);
+            text-decoration: none; /* Keep no underline */
+            transition: color 0.3s ease;
+        }
+
+        .publication-list li a:hover {
+            color: var(--primary-color);
+            text-decoration: underline; /* Add underline on hover for links */
+        }
+
+        /* Removed .pub-year-count as it wasn't used */
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            color: #ffffff;
+            background-color: var(--secondary-color);
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .social-links-footer {
+            margin-bottom: 15px;
+        }
+
+        .social-links-footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links-footer a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            header h1 {
+                 margin-bottom: 15px;
+            }
+            header nav {
+                 margin-top: 10px;
+                 width: 100%;
+            }
+            header nav ul {
+                 flex-direction: column;
+                 align-items: center;
+            }
+            header nav li {
+                 margin: 8px 0;
+                 margin-left: 0;
+            }
+
+            .page-header {
+                flex-direction: column;
+                align-items: center; /* Center items */
+                text-align: center;
+            }
+
+            .page-header p {
+                margin-top: 5px; /* Reduce space */
+            }
+             .main-title {
+                 font-size: 1.8rem; /* Adjust title size */
+                 margin-top: 30px;
+             }
+             .publication-list {
+                 padding: 20px; /* Reduce padding */
+             }
+             .publication-list h2 {
+                 font-size: 1.3rem;
+             }
+             .publication-list li {
+                 padding-left: 5px; /* Reduce left padding */
+                 padding-right: 5px;
+             }
+        }
+         @media (max-width: 480px) {
+              header h1 {
+                  font-size: 1.5rem;
+              }
+              header a {
+                  font-size: 0.8rem;
+              }
+              .main-title {
+                  font-size: 1.6rem;
+              }
+         }
+    </style>
+
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nikolaos Boumparis, PhD</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="main-title">Publications</h1>
+            <p>Last updated on July 2nd, 2024</p> </div>
+
+        <div class="publication-list">
+
+            <h2>2024</h2>
+            <ul>
+                <li>Kiselev, N., Amsler, S., Boumparis, N., Dey, M., Wenger, A., Schnoz, D., ... & Gross, C. S. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents. Swiss Medical Weekly, 154(9), 3895-3895.</li>
+                </ul>
+
+            <h2>2023</h2>
+            <ul>
+                <li>Boumparis, N., Baumgartner, C., Malischnig, D., Wenger, A., Achab, S., Khazaal, Y., ... & Schaub, M. P. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial. Journal of Behavioral Addictions, 12(3), 744-757.</li>
+                <li>Boumparis, N., Noroozi, A., Naghizadeh, E. et al. (2023). Blended smartphone intervention for patients in opioid maintenance treatment in Iran: protocol for a randomized controlled trial. BMC Psychiatry 23, 518.</li>
+                <li>Haug, S., Boumparis, N., Wenger, A., Paz Castro, R., & Schaub, M. P. (2023). Mobile App-Based Coaching for Alcohol Prevention among Adolescents: Pre–Post Study on the Acceptance and Effectiveness of the Program "MobileCoach Alcohol". International journal of environmental research and public health, 20(4), 3263.</li>
+                <li>Haug, S., Boumparis, N., Wenger, A., Schaub, M. P., & Kiselev N. (2023). Predictors of Youth Accessibility for a Mobile Phone-Based Life Skills Training Program for Addiction Prevention. International Journal of Environmental Research and Public Health, 20(14), 6379.</li>
+                <li>Schaub, M. P., Boumparis N., (2023). CANreduce 1.0 bis 3.0: Entwicklungen und Erkenntnisse eines webbasierten Selbsthilfeprogramms zur Reduktion des Cannabiskonsums. Suchtmedizin 25(5): 267-273.</li>
+            </ul>
+
+            <h2>2022</h2>
+            <ul>
+                <li>Ahlers, J., Baumgartner, C., Augsburger, M., Wenger, A., Malischnig, D., Boumparis, N., ... & Schaub, M. P. (2022). Cannabis Use in Adults Who Screen Positive for Attention Deficit/Hyperactivity Disorder: CANreduce 2.0 Randomized Controlled Trial Subgroup Analysis. Journal of medical internet research, 24(4), e30138.</li>
+                <li>Boumparis, N., Haug, S., Abend, S., Billieux, J., Riper, H., & Schaub, M. P. (2022). Internet-based interventions for behavioral addictions: A systematic review. Journal of Behavioral Addictions.</li>
+                <li>Boumparis, N., & Schaub, M. P. (2022). Recent advances in digital health interventions for substance use disorders. Current Opinion in Psychiatry, 35(4), 246-251.</li>
+                <li>Haug, S., Boumparis, N., Wenger, A., Schaub, M. P., & Paz Castro, R. (2022). Efficacy of a mobile app-based coaching program for addiction prevention among apprentices: a cluster-randomized controlled trial. International Journal of Environmental Research and Public Health, 19(23), 15730.</li>
+                <li>Schulte, M. H., Boumparis, N., Huizink, A. C., & Riper, H. (2022). Technological Interventions for the Treatment of Substance Use Disorders. Comprehensive Clinical Psychology, 264.</li>
+                <li>Schulte, M. H., Boumparis, N., Kleiboer, A., Wind, T. R., Olff, M., Huizink, A. C., & Riper, H. (2022). The effectiveness of a mobile intervention to reduce young adults' alcohol consumption to not exceed low-risk drinking guidelines. Frontiers in digital health, 4, 1016714.</li>
+                <li>van der Boom, B., Boumparis, N., Donker, T., de Beurs, D., Arntz, A., & Riper, H. (2022). Internet-delivered interventions for personality disorders–A scoping review. Internet interventions, 100525.</li>
+            </ul>
+
+            <h2>2021</h2>
+            <ul>
+                <li>Boumparis, N., Schulte, M. H., Kleiboer, A., Huizink, A., & Riper, H. (2021). A mobile intervention to promote low-risk drinking habits in young adults: Protocol for a randomized controlled trial. JMIR Research Protocols, 10(6), e29750.</li>
+            </ul>
+
+            <h2>2020</h2>
+            <ul>
+                <li>Bolinski, F., Boumparis, N., Kleiboer, A., Cuijpers, P., Ebert, D. D., & Riper, H. (2020). The effect of e-mental health interventions on academic performance in university and college students: A meta-analysis of randomized controlled trials. Internet interventions, 100321.</li>
+                <li>Schaub, M. P., Berman, A. H., Pelayo, H. L., Boumparis, N., Khadjesari, Z., Blankers, M., ... & Pas, L. (2020). e-INEBRIA special interest group roadmap for best practices for research on brief digital interventions for problematic alcohol and illicit drug use. Journal of Medical Internet Research, 22(8), e20368.</li>
+            </ul>
+
+            <h2>2019</h2>
+            <ul>
+                <li>Boumparis, N., Loheide-Niesmann, L., Blankers, M., Ebert, D. D., Korf, D., Schaub, M. P., Spijkerman, R., Tait, R. J., & Riper, H. (2019). Short-and Long-Term Effects of Digital Prevention and Treatment Interventions for Cannabis Use Reduction: A Systematic Review and Meta-analysis. Drug and Alcohol Dependence.</li>
+                <li>Boumparis, N., Schulte, M. H., & Riper, H. (2019). Digital mental health for alcohol and substance use disorders. Current treatment options in psychiatry, 6(4), 352-366.</li>
+            </ul>
+
+            <h2>2018</h2>
+            <ul>
+                <li>Riper, H., Hoogendoorn, A., Cuijpers, P., Karyotaki, E., Boumparis, N., Mira, A., ... & Blankers, M. (2018). Effectiveness and treatment moderators of internet interventions for adult problem drinking: An individual patient data meta-analysis of 19 randomised controlled trials. PLoS medicine, 15(12), e1002714.</li>
+            </ul>
+
+            <h2>2017</h2>
+            <ul>
+                <li>Boumparis, N., Karyotaki, E., Schaub, M. P., Cuijpers, P., & Riper, H. (2017). Internet Interventions for Adult Illicit Substance Users: A Meta‐analysis. Addiction.</li>
+            </ul>
+
+            <h2>2016</h2>
+            <ul>
+                <li>Boumparis, N., Karyotaki, E., Kleiboer, A., Hofmann, S. G., & Cuijpers, P. (2016). The effect of Psychotherapeutic Interventions on Positive and Negative Affect in Depression: A Systematic Review and Meta-analysis. Journal of Affective Disorders.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links-footer">
+            <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+            <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
+</body>
+</html>
