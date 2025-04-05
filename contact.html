@@ -14,7 +14,8 @@
     <title>Contact - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
     <meta property="og:title" content="Contact - Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
     <meta property="og:description" content="Get in touch with Dr. Nikolaos Boumparis, specialist in digital health interventions and addiction research.">
-    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content=""> <style>
+    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content="">
+    <style>
         :root {
             --primary-color: #1abc9c;
             --secondary-color: #35424a;
@@ -40,9 +41,10 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto; /* Center container horizontally */
-            overflow: hidden;
+            overflow: hidden; /* Keep hidden for this page layout */
             padding: 20px;
             flex-grow: 1; /* Allow container to grow and push footer down */
+            box-sizing: border-box; /* Added for consistency */
         }
 
         header {
@@ -50,20 +52,26 @@
             color: #ffffff;
             padding: 10px 0;
             border-bottom: var(--primary-color) 3px solid;
+            /* --- FIX STARTS HERE --- */
+            min-height: 70px; /* Replace 70 with YOUR_MEASURED_HEIGHT from index.html */
+            box-sizing: border-box;
+            display: flex; /* Ensure header itself uses flex for alignment if needed */
+            align-items: center; /* Vertically center the .container within the header */
+            /* --- FIX ENDS HERE --- */
         }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-    min-height: 95px; /* <-- Add this line */
-}
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            width: 100%; /* Ensure header container uses full width */
+            max-width: 1200px; /* Match main container max-width */
+            margin: 0 auto; /* Center header content */
+            padding: 0 20px; /* Add padding consistent with main container */
+            box-sizing: border-box; /* Include padding in width calculation */
+            /* min-height: 95px; */ /* <-- REMOVED this incorrect line */
+        }
 
         header h1 {
             margin: 0;
@@ -101,6 +109,7 @@ header .container {
             color: var(--primary-color);
         }
 
+        /* Renamed h2 to avoid conflict if needed, but seems fine */
         h2 {
             color: var(--secondary-color);
             margin-top: 40px;
@@ -109,7 +118,7 @@ header .container {
             display: inline-block;
         }
 
-        .contact-info, .social-links-section { /* Renamed social-links class to avoid conflict */
+        .contact-info, .social-links-section {
             background-color: var(--card-bg-color);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -188,9 +197,16 @@ header .container {
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+             /* --- Add mobile reset for header height --- */
+            header {
+                 min-height: initial; /* Reset min-height for mobile stacking layout */
+            }
+            /* --- End mobile reset --- */
+
             header .container {
                 flex-direction: column;
                 text-align: center;
+                 /* min-height: initial; */ /* Reset container min-height too if it was ever set */
             }
 
             header h1 {
@@ -211,6 +227,30 @@ header .container {
                 margin: 8px 0; /* Adjust vertical margin */
                 margin-left: 0; /* Remove left margin */
             }
+            /* Added specific adjustments for contact page elements */
+            .contact-info, .social-links-section {
+                padding: 20px;
+            }
+            h2 {
+                 font-size: 1.8rem;
+                 margin-top: 30px;
+            }
+        }
+        /* Added max-width 480px media query for consistency */
+        @media (max-width: 480px) {
+             header h1 {
+                  font-size: 1.5rem;
+             }
+             header a {
+                  font-size: 0.8rem;
+             }
+             h2 {
+                  font-size: 1.6rem;
+             }
+             .social-links-section a {
+                 margin-right: 10px; /* Slightly reduce margin */
+                 padding: 6px 12px; /* Slightly reduce padding */
+             }
         }
     </style>
 

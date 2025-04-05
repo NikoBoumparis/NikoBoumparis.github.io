@@ -38,7 +38,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto; /* Center container horizontally */
-            overflow: hidden;
+            overflow: hidden; /* Keep hidden for this page layout if desired */
             padding: 20px;
             flex-grow: 1; /* Allow container to grow and push footer down */
         }
@@ -48,21 +48,27 @@
             color: #ffffff;
             padding: 10px 0;
             border-bottom: var(--primary-color) 3px solid;
+            /* --- FIX STARTS HERE --- */
+            min-height: 70px; /* Replace 70 with YOUR_MEASURED_HEIGHT from index.html */
+            box-sizing: border-box;
+            display: flex; /* Ensure header itself uses flex for alignment if needed */
+            align-items: center; /* Vertically center the .container within the header */
+            /* --- FIX ENDS HERE --- */
         }
 
-        /* Consistent Header Styling from contact.html */
-   header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-    min-height: 95px; /* <-- Add this line */
-}
+        /* Consistent Header Styling */
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            width: 100%; /* Ensure header container uses full width */
+            max-width: 1200px; /* Match main container max-width */
+            margin: 0 auto; /* Center header content */
+            padding: 0 20px; /* Add padding consistent with main container */
+            box-sizing: border-box; /* Include padding in width calculation */
+            /* min-height: 95px; */ /* <-- REMOVED this incorrect line */
+        }
 
         header h1 {
              margin: 0;
@@ -164,11 +170,18 @@
              color: var(--primary-color);
          }
 
-        /* Responsive adjustments from contact.html */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
+             /* --- Add mobile reset for header height --- */
+            header {
+                 min-height: initial; /* Reset min-height for mobile stacking layout */
+            }
+            /* --- End mobile reset --- */
+
             header .container {
                 flex-direction: column;
                 text-align: center;
+                /* min-height: initial; /* Reset container min-height too if it was ever set */
             }
              header h1 {
                  margin-bottom: 15px; /* Add space below title */
@@ -193,6 +206,18 @@
              }
              .cv-content {
                  padding: 20px; /* Reduce padding on smaller screens */
+             }
+        }
+        /* Added max-width 480px media query from other files for consistency */
+        @media (max-width: 480px) {
+             header h1 {
+                  font-size: 1.5rem;
+             }
+             header a {
+                  font-size: 0.8rem;
+             }
+             .main-title {
+                  font-size: 1.6rem;
              }
         }
     </style>
@@ -221,9 +246,7 @@
         <div class="cv-content">
             <p>For a complete overview of my education, research experience, publications, and professional activities, please download my CV using the button below.</p>
 
-            <a href="assets/Boumparis_CV_February2025.pdf" class="download-btn" download>Download CV (PDF)</a>
-
-        </div>
+            <a href="assets/Boumparis_CV_February2025.pdf" class="download-btn" download>Download CV (PDF)</a> </div>
     </div>
 
     <footer>

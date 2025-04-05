@@ -52,20 +52,26 @@
             color: #ffffff;
             padding: 10px 0;
             border-bottom: var(--primary-color) 3px solid;
+            /* --- FIX STARTS HERE --- */
+            min-height: 70px; /* Replace 70 with YOUR_MEASURED_HEIGHT from index.html */
+            box-sizing: border-box;
+            display: flex; /* Ensure header itself uses flex for alignment if needed */
+            align-items: center; /* Vertically center the .container within the header */
+            /* --- FIX ENDS HERE --- */
         }
 
-     header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-    min-height: 95px; /* <-- Add this line */
-}
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            /* min-height: 95px; */ /* <-- REMOVED this incorrect line */
+        }
 
         header h1 {
              margin: 0;
@@ -184,9 +190,16 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+             /* --- Add mobile reset for header height --- */
+            header {
+                 min-height: initial; /* Reset min-height for mobile stacking layout */
+            }
+            /* --- End mobile reset --- */
+
             header .container {
                  flex-direction: column;
                  text-align: center;
+                 /* min-height: initial; /* Reset container min-height too if it was ever set */
             }
             header h1 {
                   margin-bottom: 15px;
@@ -252,11 +265,9 @@
             <p>I hold a Psychology degree from the University of Crete, a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam, and a Ph.D. from the same university, where my research focused on digital mental health interventions.</p>
 
             <h2>Current Positions</h2>
-                <li>Since 2021, I've been a Postdoctoral Researcher at the <strong>Swiss Research Institute for Public Health and Addiction (ISGF)</strong> in Zurich. Here, my work centers on evaluating digital interventions targeting addictive behaviors through methods like randomized controlled trials, systematic reviews, and meta-analyses.</li>
-                <li>In 2024, I became the Co-Head of Research and Quality Assurance at the <strong>Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich</strong>. This position expands my focus to include youth forensic mental health, investigating the effectiveness of therapeutic approaches for young people within the justice system.</li>
-            </ul>
-
-            <h2>My Research Focus</h2>
+                <ul> <li>Since 2021, I've been a Postdoctoral Researcher at the <strong>Swiss Research Institute for Public Health and Addiction (ISGF)</strong> in Zurich. Here, my work centers on evaluating digital interventions targeting addictive behaviors through methods like randomized controlled trials, systematic reviews, and meta-analyses.</li>
+                    <li>In 2024, I became the Co-Head of Research and Quality Assurance at the <strong>Centre for Child and Youth Forensics (ZKJF), University Hospital of Psychiatry Zurich</strong>. This position expands my focus to include youth forensic mental health, investigating the effectiveness of therapeutic approaches for young people within the justice system.</li>
+                </ul> <h2>My Research Focus</h2>
             <h3>Digital Health Interventions & Addiction</h3>
             <p>At the ISGF, I evaluate digital tools designed to help individuals modify harmful behaviors and enhance their wellbeing. My interest lies in identifying the factors that contribute to the effectiveness of these interventions and exploring strategies to maintain user engagement over time. My work encompasses both substance use and behavioral dependencies, utilizing clinical trials, systematic reviews, and meta-analyses to determine treatment efficacy.</p>
 

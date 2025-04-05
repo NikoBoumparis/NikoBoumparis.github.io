@@ -50,12 +50,17 @@
              flex-grow: 1;
         }
 
-
         header {
             background: var(--secondary-color);
             color: #ffffff;
-            padding: 10px 0; /* Adjusted padding for photo */
+            padding: 10px 0;
             border-bottom: var(--primary-color) 3px solid;
+            /* --- FIX STARTS HERE --- */
+            min-height: 70px; /* Replace 70 with YOUR_MEASURED_HEIGHT */
+            box-sizing: border-box;
+            display: flex; /* Ensure header itself uses flex for alignment if needed */
+            align-items: center; /* Vertically center the .container within the header */
+            /* --- FIX ENDS HERE --- */
         }
 
         /* Consistent Header Styling */
@@ -108,28 +113,20 @@
             color: var(--primary-color);
         }
 
-        /* Header Profile Photo */
-        header .profile-photo {
-            border-radius: 50%;
-            width: 50px; /* Adjusted size */
-            height: 50px;
-            object-fit: cover;
-            margin-left: 20px; /* Space from navigation */
-            order: 2; /* Place after nav in flex order */
-        }
-
+        /* Header Profile Photo rule REMOVED */
+        /* header .profile-photo { ... } */
 
         /* Styles for Profile Section */
         .profile {
-            display: flex;
-            align-items: flex-start;
-            /* margin-top is now handled by section#main */
+            /* Removed display:flex to allow block layout for image/text */
+            /* align-items: flex-start; */
             background-color: var(--card-bg-color);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
+            overflow: hidden; /* Use hidden to contain float */
+            margin-top: 40px; /* Added margin-top directly here */
         }
 
         .profile:hover {
@@ -137,10 +134,21 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* Profile Image styles removed as image is moved */
+        /* --- NEW STYLE for photo inside .profile --- */
+        .profile .profile-photo {
+            float: left; /* Position photo to the left of text */
+            margin-right: 30px; /* Space between photo and text */
+            margin-bottom: 15px; /* Space below photo if text wraps */
+            border-radius: 50%;
+            width: 120px; /* Adjust size as desired */
+            height: 120px;
+            object-fit: cover;
+        }
+        /* --- END NEW STYLE --- */
 
         .profile-details {
-            flex: 1;
+            /* No longer needs flex: 1 */
+            overflow: hidden; /* Added to contain content correctly with float */
         }
 
         .profile-details h2 {
@@ -154,22 +162,6 @@
 
         .profile-details p {
             margin-bottom: 15px;
-        }
-
-        .profile-details h3 {
-            color: var(--secondary-color);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .profile-details ul {
-            padding-left: 20px;
-            list-style: disc;
-            margin: 0;
-        }
-        .profile-details li {
-             margin-bottom: 8px;
         }
 
         /* Highlights Section Styles */
@@ -270,64 +262,78 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+             /* --- Add mobile reset for header height --- */
+             header {
+                 min-height: initial; /* Reset min-height for mobile stacking layout */
+             }
+             /* --- End mobile reset --- */
+
             header .container {
-                 /* flex-direction: column; -- Keep row for potential photo placement */
-                 /* text-align: center; -- Align items individually */
-                 justify-content: center; /* Center items */
+                 /* flex-direction: column; */ /* Keep as row now */
+                 /* text-align: center; */
+                 justify-content: space-between; /* Revert to space-between */
             }
             header h1 {
                   /* margin-bottom: 15px; */
-                  text-align: center; /* Center H1 */
-                  width: 100%; /* Allow H1 to take full width */
-                  order: 0; /* Ensure H1 is first */
-                  margin-bottom: 10px; /* Space below H1 */
-                  flex-grow: 0; /* Don't allow grow */
+                  text-align: left; /* Revert alignment */
+                  width: auto; /* Revert width */
+                  order: initial; /* Revert order */
+                  margin-bottom: 0; /* Revert margin */
+                  flex-grow: 1; /* Revert grow */
             }
             header nav {
                   /* margin-top: 10px; */
-                  width: auto; /* Allow nav to size naturally */
-                  order: 2; /* Nav after photo */
-                  margin-top: 10px;
+                  width: auto; /* Keep auto */
+                  order: initial; /* Revert order */
+                  margin-top: 0; /* Revert margin */
             }
             header nav ul {
-                  /* flex-direction: column; */
-                  justify-content: center; /* Center nav items */
+                  /* flex-direction: column; */ /* Keep row */
+                  justify-content: flex-end; /* Align nav right */
                   /* align-items: center; */
-
             }
             header nav li {
                   /* margin: 8px 0; */
                   /* margin-left: 0; */
-                  margin: 5px 8px; /* Adjust spacing */
+                  margin: 5px 0 5px 15px; /* Revert margin */
             }
 
-            /* Adjust header photo for mobile */
-            header .profile-photo {
-                order: 1; /* Photo between H1 and Nav */
-                margin: 0 auto 10px auto; /* Center photo with margin */
-                width: 60px; /* Slightly larger for visibility */
-                height: 60px;
-            }
+            /* Adjust header photo for mobile REMOVED */
+            /* header .profile-photo { ... } */
 
 
-            #main {
-                margin-top: 30px !important;
+            #main { /* Removed !important */
+                margin-top: 30px;
             }
 
             .profile {
-                 flex-direction: column;
-                 align-items: center;
-                 text-align: center;
+                 /* flex-direction: column; */ /* Let block layout handle it */
+                 /* align-items: center; */
+                 text-align: left; /* Revert text align */
                  padding: 20px;
             }
 
-            /* Profile Image responsive styles removed */
+             /* --- Responsive styles for photo in new location --- */
+            .profile .profile-photo {
+                float: none; /* Disable float */
+                display: block; /* Make it a block element */
+                margin: 0 auto 20px auto; /* Center horizontally, add bottom margin */
+                width: 100px; /* Adjust size for mobile */
+                height: 100px;
+            }
+             /* --- End responsive styles --- */
 
             .profile-details h2 {
                  font-size: 1.3rem;
+                 display: block; /* Make H2 block */
+                 text-align: center; /* Center H2 text */
+                 border-bottom: none; /* Remove border if centered */
             }
-             .profile-details h3 {
+             .profile-details h3 { /* Added for consistency */
                   font-size: 1.1rem;
+             }
+              .profile-details p { /* Center text on mobile */
+                 text-align: center;
              }
 
             .highlights {
@@ -352,12 +358,14 @@
               header a {
                    font-size: 0.8rem;
               }
-              header .profile-photo {
-                   width: 50px;
-                   height: 50px;
-              }
+              /* Adjust header photo for mobile REMOVED */
+              /* header .profile-photo { ... } */
 
-             /* Profile Image responsive styles removed */
+              /* Adjust photo size for very small screens */
+               .profile .profile-photo {
+                   width: 80px;
+                   height: 80px;
+               }
          }
     </style>
 </head>
@@ -376,19 +384,18 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <img src="photo.jpg" alt="Profile Photo" class="profile-photo">
-        </div>
+            </div>
     </header>
 
     <div class="container main-content-area">
 
-        <section id="main" style="margin-top: 40px;">
-            <div class="profile">
+        <div class="profile">
+                 <img src="photo.jpg" alt="Profile Photo" class="profile-photo">
                 <div class="profile-details">
                     <h2>About Me</h2>
                     <p>Nikolaos Boumparis holds a Psychology degree from the University of Crete and a Research Master's in Clinical and Developmental Psychopathology from Vrije Universiteit Amsterdam. His Ph.D. at Vrije Universiteit focused on digital mental health interventions.</p>
                     <p>Since 2021, Nikolaos has been a postdoctoral researcher at the Swiss Research Institute for Public Health and Addiction, conducting randomized controlled trials, systematic reviews, and meta-analyses in addiction research. In 2024, he joined the Centre for Child and Adolescent Forensics at the University Hospital of Psychiatry Zurich to conduct research in forensic mental health settings.</p>
-                </div>
+                     </div>
             </div>
 
             <div class="highlights">
@@ -411,8 +418,9 @@
                      <a href="presentations.html" class="btn">View All Presentations</a>
                  </div>
             </div>
-        </section>
-    </div> <footer>
+        </div>
+
+    <footer>
         <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
