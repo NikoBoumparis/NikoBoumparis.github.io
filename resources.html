@@ -14,7 +14,8 @@
     <title>Resources - Nikolaos Boumparis, PhD | Digital Health & Addiction Research</title>
     <meta property="og:title" content="Resources - Nikolaos Boumparis, PhD | Digital Health & Addiction Research">
     <meta property="og:description" content="Curated resources related to digital health, addiction science, and research methodology.">
-    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content=""> <style>
+    <meta property="og:image" content="photo.jpg"> <meta property="og:url" content="">
+    <style>
         /* Copied styles from your existing pages for consistency */
         :root {
             --primary-color: #1abc9c;
@@ -52,24 +53,30 @@
             color: #ffffff;
             padding: 10px 0;
             border-bottom: var(--primary-color) 3px solid;
+            /* --- FIX STARTS HERE --- */
+            min-height: 70px; /* Replace 70 with YOUR_MEASURED_HEIGHT from index.html */
+            box-sizing: border-box;
+            display: flex; /* Ensure header itself uses flex for alignment if needed */
+            align-items: center; /* Vertically center the .container within the header */
+            /* --- FIX ENDS HERE --- */
         }
 
-      header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-    min-height: 95px; /* <-- Add this line */
-}
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            /* min-height: 95px; */ /* <-- REMOVED this incorrect line */
+        }
 
         header h1 {
-             margin: 0;
-             font-size: 1.8rem;
+            margin: 0;
+            font-size: 1.8rem;
         }
 
         header nav ul {
@@ -86,7 +93,7 @@
             margin-bottom: 5px;
         }
         header nav li:first-child {
-             margin-left: 0;
+            margin-left: 0;
         }
 
         header a {
@@ -237,9 +244,16 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            /* Let's also ensure the header min-height adapts or is reconsidered on mobile */
+            header {
+                min-height: initial; /* Reset min-height for mobile stacking layout */
+                /* Or set a different min-height if needed for mobile */
+            }
+
             header .container {
                 flex-direction: column;
                 text-align: center;
+                /* min-height: initial; /* Reset container min-height too if it was ever set */
             }
             header h1 {
                  margin-bottom: 15px;
