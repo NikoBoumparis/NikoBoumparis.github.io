@@ -51,17 +51,18 @@
         }
 
         /* Consistent Header Styling from contact.html */
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            width: 100%; /* Ensure header container uses full width */
-            max-width: 1200px; /* Match main container max-width */
-            margin: 0 auto; /* Center header content */
-            padding: 0 20px; /* Add padding consistent with main container */
-            box-sizing: border-box; /* Include padding in width calculation */
-        }
+   header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    min-height: 75px; /* <-- Add this line */
+}
 
         header h1 {
              margin: 0;
