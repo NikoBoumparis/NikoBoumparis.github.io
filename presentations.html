@@ -32,18 +32,18 @@
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
-            display: flex; /* Use flexbox for footer */
-            flex-direction: column; /* Stack elements vertically */
-            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: 0 auto; /* Center container horizontally */
-            overflow: visible; /* Prevent shadow clipping */
+            margin: 0 auto;
+            overflow: visible;
             padding: 20px;
-            flex-grow: 1; /* Allow container to grow and push footer down */
+            flex-grow: 1;
             box-sizing: border-box;
         }
 
@@ -53,14 +53,13 @@
             padding: 10px 0;
             border-bottom: var(--primary-color) 3px solid;
             /* --- FIX STARTS HERE --- */
-            min-height: 70px; /* Replace 70 with YOUR_MEASURED_HEIGHT from index.html */
+            min-height: 70px; /* Replace 70 with YOUR MEASURED HEIGHT */
             box-sizing: border-box;
-            display: flex; /* Ensure header itself uses flex for alignment if needed */
-            align-items: center; /* Vertically center the .container within the header */
+            display: flex;
+            align-items: center;
             /* --- FIX ENDS HERE --- */
         }
 
-        /* Consistent Header Styling */
         header .container {
             display: flex;
             justify-content: space-between;
@@ -71,7 +70,7 @@
             margin: 0 auto;
             padding: 0 20px;
             box-sizing: border-box;
-           /* min-height: 95px; */ /* <-- REMOVED this incorrect line */
+            /* REMOVED min-height from here */
         }
 
         header h1 {
@@ -109,27 +108,26 @@
             color: var(--primary-color);
         }
 
-        /* Style for the main H1 title on the page */
         .main-title {
             color: var(--secondary-color);
             margin-top: 40px;
             display: inline-block;
-            font-size: 2rem; /* Match header h1 size */
+            font-size: 2rem;
         }
 
         .page-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline; /* Align baseline for better text alignment */
+            align-items: baseline;
             flex-wrap: wrap;
-            gap: 10px; /* Add gap for spacing */
-            margin-bottom: 10px; /* Space below header */
+            gap: 10px;
+            margin-bottom: 10px;
         }
 
         .page-header p {
             font-style: italic;
             color: #666;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
 
         .presentation-list {
@@ -151,12 +149,12 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             display: inline-block;
-            margin-top: 30px; /* Increased top margin */
-            margin-bottom: 15px; /* Added bottom margin */
-            font-size: 1.5rem; /* Adjusted size */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
-        .presentation-list h2:first-of-type { /* Use first-of-type for first h2 */
+        .presentation-list h2:first-of-type {
             margin-top: 0;
         }
 
@@ -166,22 +164,20 @@
         }
 
         .presentation-list li {
-            margin-bottom: 20px; /* Increased spacing */
-            border-bottom: 1px solid #eee; /* Lighter border */
-            padding-bottom: 20px; /* Increased padding */
-            padding-left: 10px; /* Add left padding for indentation */
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            padding-left: 10px;
             padding-right: 10px;
             border-radius: 4px;
             transition: background-color 0.3s ease;
-            position: relative; /* For potential pseudo-elements */
+            position: relative;
         }
-         /* Remove border from last list item in each UL */
          .presentation-list ul li:last-child {
               border-bottom: none;
               margin-bottom: 0;
-              padding-bottom: 10px; /* Adjust padding for last item */
+              padding-bottom: 10px;
          }
-
 
         .presentation-list li:hover {
             background-color: #f9f9f9;
@@ -190,11 +186,9 @@
         .presentation-list li small {
             display: block;
             color: #7f8c8d;
-            margin-top: 8px; /* Increased space */
-            font-style: italic; /* Italicize location/date */
+            margin-top: 8px;
+            font-style: italic;
         }
-
-        /* Removed .presentation-count as it wasn't used */
 
         footer {
             margin-top: 40px;
@@ -221,18 +215,13 @@
             color: var(--primary-color);
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
-             /* --- Add mobile reset for header height --- */
             header {
-                 min-height: initial; /* Reset min-height for mobile stacking layout */
+                 min-height: initial;
             }
-            /* --- End mobile reset --- */
-
             header .container {
                 flex-direction: column;
                 text-align: center;
-                /* min-height: initial; */ /* Reset container min-height too if it was ever set */
             }
             header h1 {
                  margin-bottom: 15px;
@@ -249,22 +238,20 @@
                  margin: 8px 0;
                  margin-left: 0;
             }
-
             .page-header {
                 flex-direction: column;
-                align-items: center; /* Center items */
+                align-items: center;
                 text-align: center;
             }
-
             .page-header p {
-                margin-top: 5px; /* Reduce space */
+                margin-top: 5px;
             }
              .main-title {
-                 font-size: 1.8rem; /* Adjust title size */
+                 font-size: 1.8rem;
                  margin-top: 30px;
              }
              .presentation-list {
-                 padding: 20px; /* Reduce padding */
+                 padding: 20px;
              }
              .presentation-list h2 {
                  font-size: 1.3rem;
@@ -282,8 +269,7 @@
               }
          }
     </style>
-
-    </head>
+</head>
 <body>
     <header>
         <div class="container">
@@ -300,12 +286,11 @@
             </nav>
         </div>
     </header>
-
     <div class="container">
         <div class="page-header">
             <h1 class="main-title">Presentations</h1>
-             <p>Last updated on April 4th, 2025</p> </div>
-
+             <p>Last updated on April 4th, 2025</p>
+        </div>
         <div class="presentation-list">
             <h2>2024</h2>
             <ul>
@@ -316,7 +301,6 @@
                     <small>European Association of Substance Abuse Research, Prague, Czech Republic, May 2024.</small>
                 </li>
             </ul>
-
             <h2>2023</h2>
             <ul>
                 <li>“Wodka, Benzos & Co: Jugendliche und junge Erwachsene mit Mischkonsum.”
@@ -326,7 +310,6 @@
                     <small>Let’s Talk Overdose Conference, Online, April 2023.</small>
                 </li>
             </ul>
-
             <h2>2022</h2>
             <ul>
                 <li>“In adults with alcohol use disorders or hazardous drinking, are digital interventions effective?”
@@ -339,14 +322,12 @@
                     <small>Virtual Solutions for Substance Use Care, Online, January 2022.</small>
                 </li>
             </ul>
-
             <h2>2021</h2>
             <ul>
                 <li>“Digital Interventions for Adult Drug Users: A Systematic Review and Meta-analysis.”
                     <small>European Association of Substance Abuse Research, Gibraltar, May 2021.</small>
                 </li>
             </ul>
-
             <h2>2019</h2>
             <ul>
                 <li>“A Supportive Digital Intervention Aiming to Reduce Young Adults’ Alcohol Intake: A Randomized Controlled Trial.”
@@ -356,14 +337,12 @@
                     <small>Conference of the Fachverband Drogen- und Suchthilfe (FDR), Frankfurt, Germany, May 2019.</small>
                 </li>
             </ul>
-
             <h2>2018</h2>
             <ul>
                 <li>“The Effects of Internet-based Prevention and Treatment Interventions for Cannabis Use Reduction.”
                     <small>International Network on Brief Interventions for Alcohol & Other Drugs (INEBRIA), Santiago, Chile, September 2018.</small>
                 </li>
             </ul>
-
             <h2>2017</h2>
             <ul>
                 <li>“The treatment of PTSD supported by the EMD app in routine care.”
@@ -375,12 +354,12 @@
             </ul>
         </div>
     </div>
-
     <footer>
         <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             <a href="https://www.linkedin.com/in/nikolaos-boumparis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-        <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p> </footer>
+        <p>&copy; 2024 Nikolaos Boumparis. All rights reserved.</p>
+    </footer>
 </body>
 </html>

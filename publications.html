@@ -32,18 +32,18 @@
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
-            display: flex; /* Use flexbox for footer */
-            flex-direction: column; /* Stack elements vertically */
-            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: 0 auto; /* Center container horizontally */
-            overflow: visible; /* Prevent shadow clipping */
+            margin: 0 auto;
+            overflow: visible;
             padding: 20px;
-            flex-grow: 1; /* Allow container to grow and push footer down */
+            flex-grow: 1;
             box-sizing: border-box;
         }
 
@@ -53,14 +53,13 @@
             padding: 10px 0;
             border-bottom: var(--primary-color) 3px solid;
             /* --- FIX STARTS HERE --- */
-            min-height: 70px; /* Replace 70 with YOUR_MEASURED_HEIGHT from index.html */
+            min-height: 70px; /* Replace 70 with YOUR MEASURED HEIGHT */
             box-sizing: border-box;
-            display: flex; /* Ensure header itself uses flex for alignment if needed */
-            align-items: center; /* Vertically center the .container within the header */
+            display: flex;
+            align-items: center;
             /* --- FIX ENDS HERE --- */
         }
 
-        /* Consistent Header Styling */
         header .container {
             display: flex;
             justify-content: space-between;
@@ -71,7 +70,7 @@
             margin: 0 auto;
             padding: 0 20px;
             box-sizing: border-box;
-            /* min-height: 95px; */ /* <-- REMOVED this incorrect line */
+             /* REMOVED min-height from here */
         }
 
         header h1 {
@@ -109,27 +108,26 @@
             color: var(--primary-color);
         }
 
-        /* Style for the main H1 title on the page */
         .main-title {
             color: var(--secondary-color);
             margin-top: 40px;
             display: inline-block;
-            font-size: 2rem; /* Match header h1 size */
+            font-size: 2rem;
         }
 
         .page-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline; /* Align baseline for better text alignment */
+            align-items: baseline;
             flex-wrap: wrap;
-            gap: 10px; /* Add gap for spacing */
-            margin-bottom: 10px; /* Space below header */
+            gap: 10px;
+            margin-bottom: 10px;
         }
 
         .page-header p {
             font-style: italic;
             color: #666;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
 
         .publication-list {
@@ -151,12 +149,12 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             display: inline-block;
-            margin-top: 30px; /* Increased top margin */
-            margin-bottom: 15px; /* Added bottom margin */
-            font-size: 1.5rem; /* Adjusted size */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
-        .publication-list h2:first-of-type { /* Use first-of-type for first h2 */
+        .publication-list h2:first-of-type {
             margin-top: 0;
         }
 
@@ -166,41 +164,35 @@
         }
 
         .publication-list li {
-            margin-bottom: 20px; /* Increased spacing */
-            border-bottom: 1px solid #eee; /* Lighter border */
-            padding-bottom: 20px; /* Increased padding */
-            padding-left: 10px; /* Add left padding for indentation */
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            padding-left: 10px;
             padding-right: 10px;
             border-radius: 4px;
             transition: background-color 0.3s ease;
-            line-height: 1.7; /* Improve readability */
+            line-height: 1.7;
         }
-        /* Remove border from last list item in each UL */
         .publication-list ul li:last-child {
              border-bottom: none;
              margin-bottom: 0;
-             padding-bottom: 10px; /* Adjust padding for last item */
+             padding-bottom: 10px;
         }
-
 
         .publication-list li:hover {
             background-color: #f9f9f9;
         }
 
-        /* Removed small tag styling as it wasn't used */
-
-        .publication-list li a { /* Style links within list items */
+        .publication-list li a {
             color: var(--link-color);
-            text-decoration: none; /* Keep no underline */
+            text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .publication-list li a:hover {
             color: var(--primary-color);
-            text-decoration: underline; /* Add underline on hover for links */
+            text-decoration: underline;
         }
-
-        /* Removed .pub-year-count as it wasn't used */
 
         footer {
             margin-top: 40px;
@@ -227,18 +219,13 @@
             color: var(--primary-color);
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
-             /* --- Add mobile reset for header height --- */
             header {
-                 min-height: initial; /* Reset min-height for mobile stacking layout */
+                 min-height: initial;
             }
-            /* --- End mobile reset --- */
-
             header .container {
                 flex-direction: column;
                 text-align: center;
-                 /* min-height: initial; */ /* Reset container min-height too if it was ever set */
            }
             header h1 {
                  margin-bottom: 15px;
@@ -255,28 +242,26 @@
                  margin: 8px 0;
                  margin-left: 0;
             }
-
             .page-header {
                 flex-direction: column;
-                align-items: center; /* Center items */
+                align-items: center;
                 text-align: center;
             }
-
             .page-header p {
-                margin-top: 5px; /* Reduce space */
+                margin-top: 5px;
             }
              .main-title {
-                 font-size: 1.8rem; /* Adjust title size */
+                 font-size: 1.8rem;
                  margin-top: 30px;
              }
              .publication-list {
-                 padding: 20px; /* Reduce padding */
+                 padding: 20px;
              }
              .publication-list h2 {
                  font-size: 1.3rem;
              }
              .publication-list li {
-                 padding-left: 5px; /* Reduce left padding */
+                 padding-left: 5px;
                  padding-right: 5px;
              }
         }
@@ -292,8 +277,7 @@
               }
          }
     </style>
-
-    </head>
+</head>
 <body>
     <header>
         <div class="container">
@@ -310,20 +294,16 @@
             </nav>
         </div>
     </header>
-
     <div class="container">
         <div class="page-header">
             <h1 class="main-title">Publications</h1>
             <p>Last updated on July 2nd, 2024</p>
         </div>
-
         <div class="publication-list">
-
             <h2>2024</h2>
             <ul>
                 <li>Kiselev, N., Amsler, S., Boumparis, N., Dey, M., Wenger, A., Schnoz, D., ... & Gross, C. S. (2024). Behavioural patterns and dangers: a mixed-methods exploration of simultaneous polysubstance use and intervention strategies among Swiss adolescents. Swiss Medical Weekly, 154(9), 3895-3895.</li>
                 </ul>
-
             <h2>2023</h2>
             <ul>
                 <li>Boumparis, N., Baumgartner, C., Malischnig, D., Wenger, A., Achab, S., Khazaal, Y., ... & Schaub, M. P. (2023). Effectiveness of a web-based self-help tool to reduce problem gambling: A randomized controlled trial. Journal of Behavioral Addictions, 12(3), 744-757.</li>
@@ -332,7 +312,6 @@
                 <li>Haug, S., Boumparis, N., Wenger, A., Schaub, M. P., & Kiselev N. (2023). Predictors of Youth Accessibility for a Mobile Phone-Based Life Skills Training Program for Addiction Prevention. International Journal of Environmental Research and Public Health, 20(14), 6379.</li>
                 <li>Schaub, M. P., Boumparis N., (2023). CANreduce 1.0 bis 3.0: Entwicklungen und Erkenntnisse eines webbasierten Selbsthilfeprogramms zur Reduktion des Cannabiskonsums. Suchtmedizin 25(5): 267-273.</li>
             </ul>
-
             <h2>2022</h2>
             <ul>
                 <li>Ahlers, J., Baumgartner, C., Augsburger, M., Wenger, A., Malischnig, D., Boumparis, N., ... & Schaub, M. P. (2022). Cannabis Use in Adults Who Screen Positive for Attention Deficit/Hyperactivity Disorder: CANreduce 2.0 Randomized Controlled Trial Subgroup Analysis. Journal of medical internet research, 24(4), e30138.</li>
@@ -343,41 +322,34 @@
                 <li>Schulte, M. H., Boumparis, N., Kleiboer, A., Wind, T. R., Olff, M., Huizink, A. C., & Riper, H. (2022). The effectiveness of a mobile intervention to reduce young adults' alcohol consumption to not exceed low-risk drinking guidelines. Frontiers in digital health, 4, 1016714.</li>
                 <li>van der Boom, B., Boumparis, N., Donker, T., de Beurs, D., Arntz, A., & Riper, H. (2022). Internet-delivered interventions for personality disorders–A scoping review. Internet interventions, 100525.</li>
             </ul>
-
             <h2>2021</h2>
             <ul>
                 <li>Boumparis, N., Schulte, M. H., Kleiboer, A., Huizink, A., & Riper, H. (2021). A mobile intervention to promote low-risk drinking habits in young adults: Protocol for a randomized controlled trial. JMIR Research Protocols, 10(6), e29750.</li>
             </ul>
-
             <h2>2020</h2>
             <ul>
                 <li>Bolinski, F., Boumparis, N., Kleiboer, A., Cuijpers, P., Ebert, D. D., & Riper, H. (2020). The effect of e-mental health interventions on academic performance in university and college students: A meta-analysis of randomized controlled trials. Internet interventions, 100321.</li>
                 <li>Schaub, M. P., Berman, A. H., Pelayo, H. L., Boumparis, N., Khadjesari, Z., Blankers, M., ... & Pas, L. (2020). e-INEBRIA special interest group roadmap for best practices for research on brief digital interventions for problematic alcohol and illicit drug use. Journal of Medical Internet Research, 22(8), e20368.</li>
             </ul>
-
             <h2>2019</h2>
             <ul>
                 <li>Boumparis, N., Loheide-Niesmann, L., Blankers, M., Ebert, D. D., Korf, D., Schaub, M. P., Spijkerman, R., Tait, R. J., & Riper, H. (2019). Short-and Long-Term Effects of Digital Prevention and Treatment Interventions for Cannabis Use Reduction: A Systematic Review and Meta-analysis. Drug and Alcohol Dependence.</li>
                 <li>Boumparis, N., Schulte, M. H., & Riper, H. (2019). Digital mental health for alcohol and substance use disorders. Current treatment options in psychiatry, 6(4), 352-366.</li>
             </ul>
-
             <h2>2018</h2>
             <ul>
                 <li>Riper, H., Hoogendoorn, A., Cuijpers, P., Karyotaki, E., Boumparis, N., Mira, A., ... & Blankers, M. (2018). Effectiveness and treatment moderators of internet interventions for adult problem drinking: An individual patient data meta-analysis of 19 randomised controlled trials. PLoS medicine, 15(12), e1002714.</li>
             </ul>
-
             <h2>2017</h2>
             <ul>
                 <li>Boumparis, N., Karyotaki, E., Schaub, M. P., Cuijpers, P., & Riper, H. (2017). Internet Interventions for Adult Illicit Substance Users: A Meta‐analysis. Addiction.</li>
             </ul>
-
             <h2>2016</h2>
             <ul>
                 <li>Boumparis, N., Karyotaki, E., Kleiboer, A., Hofmann, S. G., & Cuijpers, P. (2016). The effect of Psychotherapeutic Interventions on Positive and Negative Affect in Depression: A Systematic Review and Meta-analysis. Journal of Affective Disorders.</li>
             </ul>
         </div>
     </div>
-
     <footer>
         <div class="social-links-footer">
             <a href="https://www.researchgate.net/profile/Nikolaos-Boumparis" target="_blank" rel="noopener noreferrer">ResearchGate</a>
