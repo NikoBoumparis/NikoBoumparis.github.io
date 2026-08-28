@@ -1,1 +1,5 @@
 scripts/new_entries.json
+
+# Python
+__pycache__/
+*.py[cod]
