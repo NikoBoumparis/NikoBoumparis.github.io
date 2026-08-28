@@ -4,7 +4,12 @@ on:
   schedule:
     # Every 4 months: Jan 1, May 1, Sep 1 at 06:00 UTC.
     - cron: "0 6 1 1,5,9 *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_email:
+        description: "Send a test notification email (does not touch index.html) to verify Gmail secrets"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -22,10 +27,12 @@ jobs:
           python-version: "3.12"
 
       - name: Fetch ORCID works and update index.html
+        if: github.event.inputs.test_email != 'true'
         run: python scripts/update_publications.py
 
       - name: Commit and push if changed
         id: commit
+        if: github.event.inputs.test_email != 'true'
         run: |
           if git diff --quiet -- index.html; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -38,8 +45,15 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Write dummy entry for test email
+        if: github.event.inputs.test_email == 'true'
+        run: |
+          cat > scripts/new_entries.json <<'EOF'
+          [{"title": "Test Paper (this is only a test email, nothing was added to the site)", "year": "2026", "journal": "Test Journal", "doi_url": "https://doi.org/10.0000/test"}]
+          EOF
+
       - name: Send notification email
-        if: steps.commit.outputs.changed == 'true'
+        if: steps.commit.outputs.changed == 'true' || github.event.inputs.test_email == 'true'
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
