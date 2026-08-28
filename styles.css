@@ -427,6 +427,76 @@ section.block{
   word-break: break-word;
 }
 
+/* ============ SUPERVISED THESES ============ */
+.theses{ margin-top: 48px; }
+.theses-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.theses-label, .theses-count{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.theses-label{ color: var(--ink-3); }
+.theses-count{ color: var(--accent-2); }
+
+.theses .pub-year:first-of-type{ border-top: none; }
+.theses > .pub-year:last-of-type{ border-bottom: none; }
+
+.thesis-status{
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1px 6px;
+  margin-left: 6px;
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+
+.thesis-more{ border-top: 1px solid var(--rule-soft); }
+.thesis-more > summary{
+  list-style: none;
+  cursor: pointer;
+  display: block;
+  padding: 14px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.thesis-more > summary::-webkit-details-marker{ display: none; }
+.thesis-more > summary::before{
+  content: "+";
+  display: inline-block;
+  width: 14px;
+  color: var(--ink-3);
+}
+.thesis-more[open] > summary::before{ content: "−"; }
+.thesis-more > summary:hover{ color: var(--ink); }
+.thesis-more > summary .more-hide{ display: none; }
+.thesis-more[open] > summary .more-show{ display: none; }
+.thesis-more[open] > summary .more-hide{ display: inline; }
+.thesis-more > summary:hover::before{ color: var(--ink); }
+.thesis-more > summary:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.thesis-more[open] > summary{ border-bottom: 1px solid var(--rule-soft); }
+.thesis-more .pub-year:first-of-type{ border-top: none; }
+
 .update-note{
   font-family: var(--mono);
   font-size: 11px;
@@ -589,4 +659,7 @@ footer.colophon{
   body{ background: white; color: black; font-size: 11pt; }
   a{ color: black; border-bottom: none; }
   .pub-year, .resource-block{ break-inside: avoid; }
+  .thesis-more > summary{ display: none; }
+  .thesis-more::details-content{ content-visibility: visible !important; }
+  .thesis-more > *:not(summary){ display: block !important; }
 }
