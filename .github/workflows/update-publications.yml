@@ -2,8 +2,19 @@ name: Update publications from ORCID
 
 on:
   schedule:
-    # Every 4 months: Jan 1, May 1, Sep 1 at 06:00 UTC.
-    - cron: "0 6 1 1,5,9 *"
+    # Quarterly update: Jan 1, Apr 1, Jul 1, Oct 1 at 06:00 UTC.
+    - cron: "0 6 1 1,4,7,10 *"
+
+    # Monthly keepalive on the 15th. GitHub disables schedules after 60 days without commits.
+    - cron: "0 6 15 * *"
+
+  # Editing this workflow or the update script runs it once.
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update-publications.yml
+      - scripts/update_publications.py
+
   workflow_dispatch:
     inputs:
       test_email:
@@ -16,6 +27,7 @@ permissions:
 
 jobs:
   update-publications:
+    if: github.event.schedule != '0 6 15 * *'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -58,3 +70,23 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python scripts/notify_email.py
+
+  keepalive:
+    if: github.event.schedule == '0 6 15 * *'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Commits only when the repo has been quiet for 25+ days, so the gap never reaches 60.
+      - name: Push empty commit if repo is idle
+        run: |
+          last=$(git log -1 --format=%ct)
+          idle_days=$(( ( $(date +%s) - last ) / 86400 ))
+          echo "Days since last commit: $idle_days"
+          if [ "$idle_days" -ge 25 ]; then
+            git config user.name "Nikolaos Boumparis, PhD"
+            git config user.email "167476703+NikoBoumparis@users.noreply.github.com"
+            git commit --allow-empty -m "Keepalive for scheduled publications workflow"
+            git push
+          fi
